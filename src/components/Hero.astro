@@ -1,0 +1,18 @@
+---
+import Logo from "./Logo.astro";
+const { backgroundImage } = Astro.props;
+---
+
+<section>
+  <Logo logoColor="white" frameColor="white" />
+</section>
+
+<style define:vars={{ backgroundImage }}>
+  section {
+    background: var(--backgroundImage) center/cover;
+backdrop-filter: brightness(50%);
+    display: grid;
+    place-items: center;
+    min-height: 200px;
+  }
+</style>
