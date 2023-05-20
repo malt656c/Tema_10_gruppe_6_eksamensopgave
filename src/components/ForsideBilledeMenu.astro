@@ -1,0 +1,40 @@
+---
+---
+
+<div><a href="">Rooms</a></div>
+<div><a href="">Menu</a></div>
+<div><a href="">Events</a></div>
+
+<style>
+  div {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1;
+  }
+  div:nth-of-type(1) {
+    background: linear-gradient(rgba(29, 36, 62, 0.3), rgba(29, 36, 62, 0.3)), url(../images/bed.jpg) center/cover;
+  }
+  div:nth-of-type(2) {
+    background: linear-gradient(rgba(29, 36, 62, 0.3), rgba(29, 36, 62, 0.3)), url(../images/food.jpg) center/cover;
+  }
+  div:nth-of-type(3) {
+    background: linear-gradient(rgba(29, 36, 62, 0.3), rgba(29, 36, 62, 0.3)), url(../images/event.jpg) center/cover;
+  }
+  a {
+    font-family: raleway, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    color: var(--dark_blue);
+    text-transform: uppercase;
+    font-size: clamp(1rem, 1.5rem);
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(3px);
+    width: 200px;
+    padding: 0.75rem;
+  }
+</style>

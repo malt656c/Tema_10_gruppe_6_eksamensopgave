@@ -1,10 +1,10 @@
 ---
-/* import PageTitle from "../components/PageTitle.astro";
-import Logo from "../components/Logo.astro"; */
 import Hero from "../components/Hero.astro";
 import NavMenu from "../components/NavMenu.astro";
 import HouseSection from "../components/HouseSection.astro";
 import ReviewsSection from "../components/ReviewsSection.astro"
+import ForsideBilledeMenu from "../components/ForsideBilledeMenu.astro"
+import KontaktSection from "../components/KontaktSection.astro"
 ---
 
 <html lang="da">
@@ -20,11 +20,13 @@ import ReviewsSection from "../components/ReviewsSection.astro"
   <body>
     <header>
       <NavMenu />
-      <Hero backgroundImage="url(../public/images/bed.jpg)" />
+      <Hero backgroundImage="url(../images/bed.jpg)" />
     </header>
     <main>
       <HouseSection/>
 <ReviewsSection/>
+<ForsideBilledeMenu/>
+<KontaktSection/>
     </main>
   </body>
 </html>
