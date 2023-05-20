@@ -1,5 +1,8 @@
 :root{
     --dark_blue: #354C82;
+    --light_blue: #7290A2;
+    --custom_white: #fff;
+    --custom_black: #000;
 }
 *{
     margin:0;

@@ -1,8 +1,9 @@
 ---
-import PageTitle from "../components/PageTitle.astro";
-import Logo from "../components/Logo.astro";
+/* import PageTitle from "../components/PageTitle.astro";
+import Logo from "../components/Logo.astro"; */
 import Hero from "../components/Hero.astro";
-import NavMenu from "../components/NavMenu.astro"
+import NavMenu from "../components/NavMenu.astro";
+import HouseSection from "../components/HouseSection.astro";
 ---
 
 <html lang="da">
@@ -17,12 +18,11 @@ import NavMenu from "../components/NavMenu.astro"
   </head>
   <body>
     <header>
-		<NavMenu/>
+      <NavMenu />
       <Hero backgroundImage="url(../public/images/bed.jpg)" />
     </header>
-	<main>
-		<!--     <PageTitle>Rosenhøj Bed & Breakfast</PageTitle> -->
-	</main>
-
+    <main>
+      <HouseSection/>
+    </main>
   </body>
 </html>

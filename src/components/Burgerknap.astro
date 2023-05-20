@@ -1,0 +1,52 @@
+---
+---
+
+<div id="burgerButton">
+  <span class="open">Menu</span>
+  <span class="close hidden">close</span>
+</div>
+
+<style>
+  #burgerButton {
+    position: fixed;
+    display: flex;
+    right: 0;
+    top: 0.5rem;
+    z-index: 10000;
+    padding: 0.5rem;
+  }
+  span {
+    position: absolute;
+    right: 0;
+    color: var(--custom_white);
+    font-family: raleway, sans-serif;
+    font-weight: 400;
+    font-size: clamp(2vw, 1rem, 2rem);
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--dark_blue);
+    padding: 0.5rem;
+    padding-right: 1rem;
+  }
+  .close{
+    background-color: var(--custom_white);
+    color: var(--custom_black);
+outline: 1px solid var(--custom_black);;
+  }
+  .hidden {
+    transform: translateX(150%);
+  }
+</style>
+
+<script>
+  const burgerKnap = document.getElementById("burgerButton");
+  burgerKnap.addEventListener("mousedown", menuToggle);
+
+  function menuToggle() {
+    console.log(burgerKnap.children);
+    burgerKnap.children[0].classList.toggle("hidden");
+    burgerKnap.children[1].classList.toggle("hidden");
+    document.querySelector("nav").classList.toggle("showmenu");
+    document.getElementById("Layer_2").classList.toggle("black_logo")
+  }
+</script>

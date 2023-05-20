@@ -1,34 +1,45 @@
 ---
 import LogoIcon from "./LogoIcon.astro";
+import Burgerknap from "./Burgerknap.astro"
 ---
-  <div>
+
+<div>
   <LogoIcon />
-<nav>
-    <a href="">Forside</a>
-    <a href="">Værelser</a>
-    <a href="">Mad</a>
-    <a href="">Events</a>
-    <a href="">Om os</a>
-</nav>
+  <Burgerknap/>
 </div>
+<nav>
+  <a href="">rooms</a>
+  <a href="">about us</a>
+  <a href="">events</a>
+  <a href="">menu</a>
+  <a href="">guestbook</a>
+  <a href="">contact</a>
+</nav>
 <style>
-   div{
+  div {
     position: absolute;
-    z-index: 100;
     display: flex;
     width: 100%;
   }
-  nav{
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    margin: auto;
+  nav {
+    position: absolute;
+    inset: 0px;
+    display: grid;
+    place-items: center;
+    z-index: 100;
+    background-color: var(--custom_white);
+    transform: translateY(-100%);
+    transition: all 0.3s ease-in-out;
   }
-a{
-    color: white;
+  a {
+    color: var(--custom_black);
     text-decoration: none;
     font-family: raleway, sans-serif;
     font-weight: 400;
-    font-style: normal;
-}
+    font-size: clamp(5vw, 5rem, 6vw);
+    text-transform: uppercase;
+  }
+  .showmenu{
+    transform: translateY(0%);
+  }
 </style>
