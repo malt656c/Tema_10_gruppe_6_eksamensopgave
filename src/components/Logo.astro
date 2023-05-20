@@ -98,7 +98,7 @@ const { logoColor, frameColor } = Astro.props;
 <style define:vars={{ logoColor, frameColor }}>
   svg {
     fill: var(--logoColor);
-    max-width: 50%;
-    outline: 3px solid var(--frameColor);
+    width: clamp(100px, 50vw, 400px);
+    outline: 2px solid var(--frameColor);
   }
 </style>

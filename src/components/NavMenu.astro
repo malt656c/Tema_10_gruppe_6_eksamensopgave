@@ -1,9 +1,34 @@
 ---
-
+import LogoIcon from "./LogoIcon.astro";
 ---
-
-
-
+  <div>
+  <LogoIcon />
+<nav>
+    <a href="">Forside</a>
+    <a href="">Værelser</a>
+    <a href="">Mad</a>
+    <a href="">Events</a>
+    <a href="">Om os</a>
+</nav>
+</div>
 <style>
-
+   div{
+    position: absolute;
+    z-index: 100;
+    display: flex;
+    width: 100%;
+  }
+  nav{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin: auto;
+  }
+a{
+    color: white;
+    text-decoration: none;
+    font-family: raleway, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
 </style>

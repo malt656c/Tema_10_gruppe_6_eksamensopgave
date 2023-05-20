@@ -2,6 +2,7 @@
 import PageTitle from "../components/PageTitle.astro";
 import Logo from "../components/Logo.astro";
 import Hero from "../components/Hero.astro";
+import NavMenu from "../components/NavMenu.astro"
 ---
 
 <html lang="da">
@@ -15,7 +16,13 @@ import Hero from "../components/Hero.astro";
     <title>Rosenhøj Bed & Breakfast</title>
   </head>
   <body>
-    <PageTitle>Rosenhøj Bed & Breakfast</PageTitle>
-    <Hero backgroundImage="url(../public/images/bed.jpg)"/>
+    <header>
+		<NavMenu/>
+      <Hero backgroundImage="url(../public/images/bed.jpg)" />
+    </header>
+	<main>
+		<!--     <PageTitle>Rosenhøj Bed & Breakfast</PageTitle> -->
+	</main>
+
   </body>
 </html>
