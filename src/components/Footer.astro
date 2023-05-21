@@ -1,9 +1,82 @@
 ---
-
+import Logo from "./Logo.astro";
 ---
 
+<footer>
+  <Logo logoColor="white" frameColor="white" />
+  <address>
+    <ul>
+      <li><span>Øksenbjergvej 1, 5700 Svendborg</span></li>
+      <li>+45 27 64 22 27</li>
+      <li>CVR: 40700498</li>
+      <li>Mail: rosenhojbnb@gmail.com</li>
+    </ul>
+  </address>
+  <div>
+    <nav>
+      <a href="">about us</a>
+      <a href="">rooms</a>
+      <a href="">events</a>
+      <a href="">menu</a>
+      <a href="">control report</a>
+    </nav>
+  </div>
 
+  <a href="" class="footer_button">Book now</a>
+</footer>
 
 <style>
+  Footer {
+    background-color: var(--light_blue);
+    display: grid;
+    place-items: center;
+    gap: 2rem;
+    padding: 1rem;
+    padding-block: 2rem;
+    color: var(--custom_white);
+    font-family: raleway, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  ul {
+    place-items: center;
+    gap: 0.5rem;
+    font-style: normal;
+  }
+  li {
+    list-style: none;
+  }
+  ul,
+  nav {
 
+    line-height: 2rem;
+    padding: 1rem;
+    display: grid;
+  }
+  div {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    padding-inline: 1rem;
+  }
+  div::after,
+  div::before {
+    content: "";
+    width: 110%;
+    height: 2px;
+    background-color: var(--custom_white);
+  }
+  a {
+    color: white;
+text-decoration: none;
+  }
+  nav>a::before{
+    content: "•";
+    margin-right: 0.75rem;
+  }
+  .footer_button{
+    outline: 1px solid var(--custom_white);
+    padding: 0.75rem;
+    font-size: 1.2rem;
+  }
 </style>
