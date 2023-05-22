@@ -1,6 +1,10 @@
 ---
 import NavMenu from "../components/NavMenu.astro";
-import Footer from "../components/Footer.astro"
+import Footer from "../components/Footer.astro";
+import MenuHeader from "../components/MenuHeader.astro";
+import Line from "../components/Line.astro";
+import ImgScrollerMenu from "../components/ImgScrollerMenu.astro";
+import ContactUsButton from "../components/ContactUsButton.astro";
 ---
 
 <html lang="da">
@@ -15,19 +19,53 @@ import Footer from "../components/Footer.astro"
   </head>
   <body>
     <header>
-      <NavMenu iconColor = "var(--custom_black)"/>
+      <NavMenu iconColor="var(--custom_black)" />
     </header>
     <main>
-
+      <MenuHeader />
+      <Line />
     </main>
-    <Footer/>
+    <p>At Rosenhøj, we pride ourselves on offering fresh, seasonal cuisine that reflects the finest local produce. Our menus change daily to feature the freshest meats, fish, and vegetables available that day.</p>
+    <ImgScrollerMenu />
+    <p>
+      Located in Svendborg, we are surrounded by some of the best fishing waters in Europe, ensuring that our fish is always fresh and abundant. We even smoke our own meats and fish, creating an unforgettable flavour experience for our guests. Join
+      us for lunch or dinner any night during your stay, and inquire about our seasonal offerings and pricing. We are committed to providing a culinary experience that delights the senses and leaves a lasting impression.
+    </p>
+    <Line />
+    <h3>BELOW IS A SUGGESTION TO WHAT WE COULD SERVE DURING YOUR STAY AT ROSENHØJ</h3>
+    <!--  dynamisk menu -->
+    <h3>IF YOU ARE INTERESTED IN FOOD OUT OF THE HOUSE, PLEASE CONTACT US</h3>
+    <ContactUsButton />
+    <img src="../images/menu/image8.jpeg" alt="" />
+    <Footer />
   </body>
 </html>
 
 <style>
+  p {
+    margin-inline: 2em;
+    margin-block: 2em;
+    font-family: "raleway", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 150%;
+  }
 
+  h3 {
+    text-align: center;
+    margin-inline: 2em;
+    margin-block: 2em;
+    font-family: "raleway", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 150%;
+    color: #354c82;
+  }
+
+  img {
+    width: 100%;
+    padding-block: 2em;
+  }
 </style>
 
-<script>
-    
-</script>
+<script></script>
