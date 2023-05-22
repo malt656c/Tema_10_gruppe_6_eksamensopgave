@@ -1,10 +1,12 @@
 ---
 import LogoIcon from "./LogoIcon.astro";
 import Burgerknap from "./Burgerknap.astro"
+
+const {iconColor} = Astro.props;
 ---
 
 <div>
-  <LogoIcon />
+  <LogoIcon Color = {iconColor}/>
   <Burgerknap/>
 </div>
 <nav>

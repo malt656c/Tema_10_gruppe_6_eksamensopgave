@@ -1,4 +1,5 @@
 ---
+const {Color} = Astro.props;
 ---
 
 <a href="index.html">
@@ -12,14 +13,14 @@
     </svg>
 </a>
 
-<style>
+<style define:vars={{ Color }}>
   a{
     z-index: 1000;
   }
 svg{
     width: clamp(30px, 10vw, 50px);
     margin: 1rem;
-    fill: var(--custom_white);
+    fill: var(--Color);
     transition: all 0.3s ease-out;
 }
 .black_logo{
