@@ -1,17 +1,42 @@
 ---
+import Line from "./Line.astro";
 ---
 
 <main>
+  <Line />
   <h3>Rosenhøj Events</h3>
+  <div id="eventBox">
+    <h3>Supperclubs</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <div id="grid1-1-1">
+      <img src="https://picsum.photos/450/400?random=1" alt="" />
+      <img src="https://picsum.photos/450/400?random=2" alt="" />
+      <img src="https://picsum.photos/450/400?random=3" alt="" />
+    </div>
+  </div>
 </main>
 
 <style>
+  #eventBox {
+  }
+
   h3 {
+    text-transform: capitalize;
     margin-top: 2%;
     font-family: raleway, sans-serif;
-    font-weight: 300;
+    font-weight: 200;
     font-size: 60px;
     text-align: center;
     color: #354c82;
+  }
+
+  p {
+    font-family: raleway, sans-serif;
+    margin-top: 2%;
+  }
+
+  #grid1-1-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 </style>
