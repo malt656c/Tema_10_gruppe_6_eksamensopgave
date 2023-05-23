@@ -2,40 +2,44 @@
 import SvbIcons from "../components/SvbIcons.astro";
 ---
 
-<body>
-  <video autoplay muted loop id="video">
-    <source src="../video/om_svb_video.mp4" type="video/mp4" />
-  </video>
-
-  <div class="content">
+<div class="content">
+  <article>
+    <video autoplay muted loop id="video">
+      <source src="../video/om_svb_video.mp4" type="video/mp4" />
+    </video>
     <h1>SVENDBORG</h1>
-    <!--    <SvbIcons /> -->
-  </div>
+  </article>
+  <SvbIcons />
+</div>
 
-  <style>
-    #video {
-      position: fixed;
-      right: 0;
-      bottom: 0;
-      min-width: 100%;
-      min-height: 50%;
-    }
+<style>
+  article {
+    position: relative;
+    width: 100%;
+    display: grid;
+    place-items: center;
+  }
+  #video {
+    width: 100vw;
+    min-height: 150px;
+    max-height: 700px;
+    object-fit: cover;
+  }
 
-    .content {
-      text-align: center;
-      position: fixed;
-      bottom: 40%;
-      /* background: rgba(0, 0, 0, 0.5); */
-      color: #f1f1f1;
-      width: 100%;
-      padding: 20px;
-    }
+  .content {
+    color: #f1f1f1;
+    padding-top: 6rem;
+  }
 
-    h1 {
-      font-family: "raleway", sans-serif;
-      font-weight: 400;
-      font-style: normal;
-      font-size: 12vw;
-    }
-  </style>
-</body>
+  h1 {
+    font-family: "raleway", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12vw;
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    backdrop-filter: brightness(80%);
+  }
+</style>

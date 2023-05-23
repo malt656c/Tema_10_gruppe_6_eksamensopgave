@@ -17,7 +17,7 @@ const {iconColor} = Astro.props;
   <a href="guestbook.html">guestbook</a>
   <a href="about_svendborg.html">About Svendborg</a>
 </nav>
-<style>
+<style define:vars={{ iconColor }}>
   div {
     position: absolute;
     display: flex;
@@ -60,7 +60,7 @@ justify-content: space-between;
     transition: all 0.3s ease-in-out;
   }
   a {
-    color: var(--custom_white);
+    color: var(--iconColor);
     font-size: 1.5rem;
   }
   }
