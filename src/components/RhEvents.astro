@@ -1,5 +1,6 @@
 ---
 import Line from "./Line.astro";
+import SoMeIcon from "./SoMeIcons.astro";
 ---
 
 <main>
@@ -22,6 +23,8 @@ import Line from "./Line.astro";
     </p>
     <section id="keepUp">
       <h4>KEEP UP TO DATE</h4>
+      <Line />
+      <SoMeIcon />
     </section>
   </div>
 </main>
@@ -63,14 +66,18 @@ import Line from "./Line.astro";
   }
 
   #keepUp {
+    max-width: 480px;
     text-align: center;
     margin-top: 5%;
     color: #354c82;
     font-family: raleway, sans-serif;
     font-size: 30px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   h4 {
     font-weight: lighter;
+    margin-bottom: 3%;
   }
 </style>
