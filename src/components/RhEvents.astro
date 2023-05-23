@@ -7,17 +7,27 @@ import Line from "./Line.astro";
   <h3>Rosenhøj Events</h3>
   <div id="eventBox">
     <h3>Supperclubs</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur possimus, doloribus dignissimos libero explicabo officia labore. Asperiores consequatur repudiandae commodi cumque cupiditate ea, saepe harum qui sint, voluptatum delectus magni
+      adipisci magnam reiciendis! Veritatis illo cum delectus neque ea deserunt, similique ratione doloremque placeat laudantium?
+    </p>
     <div id="grid1-1-1">
       <img src="https://picsum.photos/450/400?random=1" alt="" />
       <img src="https://picsum.photos/450/400?random=2" alt="" />
       <img src="https://picsum.photos/450/400?random=3" alt="" />
     </div>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur possimus, doloribus dignissimos libero explicabo officia labore. Asperiores consequatur repudiandae commodi cumque cupiditate ea, saepe harum qui sint, voluptatum delectus magni
+      adipisci magnam reiciendis! Veritatis illo cum delectus neque ea deserunt, similique ratione doloremque placeat laudantium?
+    </p>
   </div>
 </main>
 
 <style>
   #eventBox {
+    border: #354c82 solid 3px;
+    margin: 5%;
+    padding: 5%;
   }
 
   h3 {
@@ -33,10 +43,19 @@ import Line from "./Line.astro";
   p {
     font-family: raleway, sans-serif;
     margin-top: 2%;
+    font-size: 17px;
+    line-height: 200%;
   }
 
   #grid1-1-1 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    justify-self: center;
+  }
+
+  #grid1-1-1 img {
+    max-width: 100%;
+    margin-top: 5%;
   }
 </style>
