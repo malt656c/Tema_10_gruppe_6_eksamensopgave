@@ -62,4 +62,16 @@ import ReviewsCard from "./ReviewsCard.astro";
     max-width: 250px;
     text-align: center;
   }
+  @media (min-width: 1150px){
+    #ReviewsBox{
+      width: fit-content;
+    }
+    .reviews_buttons_box{
+      grid-template-columns: repeat(2, auto);
+      justify-content: center;
+      border-top: 2px solid var(--custom_black);
+      border-bottom: 2px solid var(--custom_black);
+    }
+    
+  }
 </style>

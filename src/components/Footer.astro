@@ -48,7 +48,6 @@ import Logo from "./Logo.astro";
   }
   ul,
   nav {
-
     line-height: 2rem;
     padding: 1rem;
     display: grid;
@@ -68,15 +67,34 @@ import Logo from "./Logo.astro";
   }
   a {
     color: white;
-text-decoration: none;
+    text-decoration: none;
   }
-  nav>a::before{
+  nav > a::before {
     content: "•";
     margin-right: 0.75rem;
   }
-  .footer_button{
+  .footer_button {
     outline: 1px solid var(--custom_white);
     padding: 0.75rem;
     font-size: 1.2rem;
+  }
+  @media (min-width: 1150px) {
+    footer {
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: space-around;
+      padding-inline: 6vw;
+      gap: 1rem;
+    }
+    /*     div,
+    address {
+      border-left: 2px solid var(--custom_white);
+    } */
+    div::after,
+    div::before {
+      display: none;
+    }
+    .footer_button {
+      display: none;
+    }
   }
 </style>

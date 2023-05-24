@@ -30,4 +30,14 @@ import KontaktForm from "./KontaktForm.astro"
     place-items: center;
     gap: 1rem;
   }
+  @media (min-width: 1150px){
+    section{
+      grid-template-columns: repeat(2, 1fr);
+    }
+    h2, p{
+      grid-column: 1/2;
+      max-width: 65ch;
+    }
+
+  }
 </style>

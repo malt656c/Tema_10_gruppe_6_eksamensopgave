@@ -15,7 +15,7 @@ h2 {
     font-style: normal;
     color: var(--custom_black);
     text-transform: uppercase;
-    font-size: clamp(4vw, 6vw,3rem);
+    font-size: clamp(1rem, 6vw, 3rem);
     display: grid;
     gap: 0.5rem;
   }
