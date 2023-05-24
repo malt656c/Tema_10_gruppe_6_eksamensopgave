@@ -1,5 +1,20 @@
 ---
 import ReviewsCard from "./ReviewsCard.astro";
+
+const apiUrl = "https://znpuvpweojnqtmfuiiqr.supabase.co/rest/v1/reviews?approval=is.true";
+
+const apiKey =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpucHV2cHdlb2pucXRtZnVpaXFyIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQ5MjIxNzgsImV4cCI6MjAwMDQ5ODE3OH0.1r8u1kfw4xPxzwjf46FeUeGkL_5P9MWRzr5DdtsHNKs";
+
+const response = await fetch(apiUrl, {
+  method: "GET",
+  headers: {
+    apikey: apiKey,
+    Accept: "application/json",
+    "Content-Type": "application/json",
+  },
+});
+const review = await response.json();
 ---
 
 <section>
@@ -11,7 +26,20 @@ import ReviewsCard from "./ReviewsCard.astro";
         <path d="M9 25L1 13.2293L9 1" stroke="black"></path>
       </svg>
     </div>
-    <ReviewsCard />
+    <div>
+      {
+        review.map((test) => {
+          return (
+            <ReviewsCard
+              Navn={test.reviewNavn}
+              Stars={test.reviewStars}
+              Text={test.reviewText}
+            />
+          );
+          console.log(test.reviewStars);
+        })
+      }
+    </div>
     <div id="RightArrow">
       <svg width="10" height="26" viewBox="0 0 10 26" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M1 25L9 13.2293L1 1" stroke="black"></path>
@@ -20,8 +48,8 @@ import ReviewsCard from "./ReviewsCard.astro";
   </div>
 
   <div class="reviews_buttons_box">
-<a href="https://goo.gl/maps/ANDT8Xss7Wv6u9TB8">Google Reviews</a>
-<a href="guestbook.html">Guestbook</a>
+    <a href="https://goo.gl/maps/ANDT8Xss7Wv6u9TB8">Google Reviews</a>
+    <a href="guestbook.html">Guestbook</a>
   </div>
 </section>
 
@@ -48,7 +76,7 @@ import ReviewsCard from "./ReviewsCard.astro";
     margin-top: 2rem;
     border-top: 1px solid black;
   }
-  .reviews_buttons_box a{
+  .reviews_buttons_box a {
     font-family: raleway, sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -62,16 +90,17 @@ import ReviewsCard from "./ReviewsCard.astro";
     max-width: 250px;
     text-align: center;
   }
-  @media (min-width: 1150px){
-    #ReviewsBox{
+  @media (min-width: 1150px) {
+    #ReviewsBox {
       width: fit-content;
     }
-    .reviews_buttons_box{
+    .reviews_buttons_box {
       grid-template-columns: repeat(2, auto);
       justify-content: center;
       border-top: 2px solid var(--custom_black);
       border-bottom: 2px solid var(--custom_black);
     }
-    
   }
 </style>
+
+<script></script>
