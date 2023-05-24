@@ -5,22 +5,36 @@ const { backgroundImage } = Astro.props;
 ---
 
 <section>
-  <Logo logoColor="white" frameColor="white" />'
-  <h2>Boutique bed and breakfast</h2>
+  <div>
+    <Logo logoColor="white" frameColor="white" />'
+    <h2>Boutique bed and breakfast</h2>
+  </div>
+  <div class="scroll_arrow">
+    <a href="#om_huset">
+      <svg width="81" height="30" viewBox="0 0 81 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 1L39.5 28.5L79.5 1" stroke="white" stroke-width="2"></path>
+      </svg>
+    </a>
+  </div>
 </section>
 
 <style define:vars={{ backgroundImage }}>
-
   section {
-    background: linear-gradient(rgba(29, 36, 62, 0.5), rgba(29, 36, 62, 0.5)),var(--backgroundImage) center/cover;
+    background: linear-gradient(rgba(29, 36, 62, 0.5), rgba(29, 36, 62, 0.5)), var(--backgroundImage) center/cover;
     display: grid;
     place-items: center;
     height: 100vh;
+    grid-template-rows: 6fr 1fr;
   }
-  h2{
+  div {
+    display: grid;
+    place-items: center;
+    gap: 1rem;
+  }
+  h2 {
     color: var(--custom_white);
   }
   h2::after {
-    background-color: var(--custom_white);
+    display: none;
   }
 </style>
