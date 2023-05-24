@@ -4,9 +4,7 @@ const {Text, Navn, Stars} = Astro.props;
 ---
 
 <article>
-  
   <span class="stars">{Stars}</span>
-  
   <p>
    {Text}
   </p>
@@ -18,6 +16,7 @@ const {Text, Navn, Stars} = Astro.props;
     display: grid;
     place-items: center;
     gap: 0.5rem;
+
   }
   p {
     color: var(--custom_black);
@@ -42,8 +41,16 @@ const {Text, Navn, Stars} = Astro.props;
   h3::before{
     content: "- ";
   }
+  .fade_left{
+transform: translateX(-150%);
+filter: opacity(0%);
+  }
+  .fade_right{
+    transform: translateX(150%);
+filter: opacity(0%);
+  }
 </style>
 <script>
-  const starSpan = document.querySelector(".stars");
- starSpan.textContent = "★".repeat(parseInt(starSpan.innerHTML));
+  const starSpan = document.querySelectorAll(".stars");
+ starSpan.forEach(review => review.textContent = "★".repeat(parseInt(review.innerHTML)));
 </script>
