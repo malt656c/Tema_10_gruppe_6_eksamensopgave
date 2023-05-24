@@ -95,6 +95,14 @@ const review = await response.json();
       border-bottom: 2px solid var(--custom_black);
     }
   }
+  #RightArrow, #LeftArrow{
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    padding: 1rem;
+  }
+  #RightArrow:hover, #LeftArrow:hover{
+    transform: scale(1.5);
+  }
 </style>
 
 <script>
