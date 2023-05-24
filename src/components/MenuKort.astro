@@ -1,37 +1,29 @@
 ---
+import Meal from "./Meal.astro";
+import MenuKortItem from "./MenuKortItem.astro";
 ---
 
-<div class="border">
-  <div class="flex1">
-    <h3>BREAKFAST</h3>
+<section>
+  <div>
+    <Meal mealType="Breakfast">
+      <MenuKortItem dish="GINGER SHOT" description="/W LEMON, APPLE & CARROT" />
+      <MenuKortItem dish="EGGS" description="SCRAMBLED, FRIED, POACHED" />
+      <MenuKortItem dish="COCKTAIL SAUSAGES" description="HONEY GLAZED" />
+      <MenuKortItem dish="ORGANIC BACON" description="FROM HØKILDEGÅRD" />
+      <MenuKortItem dish="MUSHROOMS" description="/W TARRAGON, RED ONIONS, SPINACH" />
+      <MenuKortItem dish="BAKED BEANS" description="/W GARLIC" />
+      <MenuKortItem dish="HOMEBAKED BREAD" description="/W BUTTER" />
+    </Meal>
 
-    <h4>GINGER SHOT</h4>
-    <p>/W LEMON, APPLE & CARROT</p>
-    <h4>EGGS</h4>
-    <p>SCRAMBLED, FRIED, POACHED</p>
-    <h4>COCKTAIL SAUSAGES</h4>
-    <p>HONEY GLAZED</p>
-    <h4>ORGANIC BACON</h4>
-    <p>FROM HØKILDEGÅRD</p>
-    <h4>MUSHROOMS</h4>
-    <p>/W TARRAGON, RED ONIONS, SPINACH</p>
-    <h4>BAKED BEANS</h4>
-    <p>/W GARLIC</p>
-    <h4>HOMEBAKED BREAD</h4>
-    <p>/W BUTTER</p>
-
-    <h3>DINNER</h3>
-    <h4>TANDOORI CHICKEN BALTI</h4>
-    <p>/W CORIANDER</p>
-    <h4>DAHL CURRY</h4>
-    <p>W/ CHICKPEAS, LENTILS & SQUASH</p>
-    <h4>SPINACH ALOO</h4>
-    <p>W/ HOMEMADE PANEER</p>
-    <h4>BASMATI RICE</h4>
-    <p>W/ CORIANDER</p>
-    <h4>NAAN BREAD</h4>
-    <p>/W CORIANDER, BUTTER & GARLIC</p>
+    <Meal mealType="Dinner">
+      <MenuKortItem dish="TANDOORI CHICKEN BALTI" description="/W CORIANDER" />
+      <MenuKortItem dish="DAHL CURRY" description="W/ CHICKPEAS, LENTILS & SQUASH" />
+      <MenuKortItem dish="SPINACH ALOO" description="W/ HOMEMADE PANEER" />
+      <MenuKortItem dish="BASMATI RICE" description="W/ CORIANDER" />
+      <MenuKortItem dish="NAAN BREAD" description="/W CORIANDER, BUTTER & GARLIC" />
+    </Meal>
   </div>
+  <div class="line"></div>
 
   <div class="flex2">
     <h3>LUNCH</h3>
@@ -57,7 +49,7 @@
     <h4>FRESH BERRY SORBETS</h4>
     <p>W/ ORGANIC BERRIES</p>
   </div>
-</div>
+</section>
 
 <style>
   /*   LAYOUT */
@@ -71,6 +63,14 @@
     border-style: double;
     align-items: center;
   }
+
+  /*   .flex1 {
+    border-right: 2px var(--dark_blue);
+   
+  }
+  .flex2 {
+    border-leftt: 2px var(--dark_blue);
+  } */
 
   h3 {
     font-family: "raleway", sans-serif;
