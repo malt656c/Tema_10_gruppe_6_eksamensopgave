@@ -2,6 +2,11 @@
 ---
 
 <section>
+  <div id="LeftArrow">
+    <svg width="10" height="26" viewBox="0 0 10 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M9 25L1 13.2293L9 1" stroke="black"></path>
+    </svg>
+  </div>
   <div id="slider-container" class="slider">
     <div class="slide">
       <img src="../images/menu/image1.jpeg" alt="" />
@@ -25,37 +30,70 @@
       <img src="../images/menu/image7.jpeg" alt="" />
     </div>
   </div>
-
-  <div class="overlay"></div>
+  <div id="RightArrow">
+    <svg width="10" height="26" viewBox="0 0 10 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1 25L9 13.2293L1 1" stroke="black"></path>
+    </svg>
+  </div>
 </section>
 
 <style>
   section {
     width: 100%;
-    margin: 0;
-    padding-inline: 1em;
-    font-family: open sans;
-  }
-  .slider {
+    padding-inline: 1.5em;
     display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  #slider-container {
+    display: flex;
+    gap: 1rem;
+    position: relative;
+    padding-inline: 1.5rem;
     height: 350px;
-    max-height: auto;
+    overflow-x: scroll;
     overflow-y: hidden;
-    overflow-x: scroll !important;
-    padding: 16px;
-    transform: scroll(calc(var(--i, 0) / var(--n) * -100%));
     scroll-behavior: smooth;
+    scroll-snap-align: center;
   }
 
-  .slider::-webkit-scrollbar {
-    height: 5px;
-    width: 150px;
-    display: none;
-  }
-  .slide img {
+  img {
     height: 100%;
     width: 250px;
-    margin: 0 10px;
     object-fit: cover;
   }
 </style>
+
+<script>
+  const imageSlider = document.getElementById("slider-container");
+  const RightArrow = document.getElementById("RightArrow");
+  const LeftArrow = document.getElementById("LeftArrow");
+  let currentImage = 0;
+  RightArrow.addEventListener("mousedown", nextImage);
+  function nextImage() {
+    if (currentImage == imageSlider.children.length) {
+    } else {
+      currentImage++;
+    }
+    console.log(currentImage);
+    imageScroll(currentImage);
+  }
+  LeftArrow.addEventListener("mousedown", prevImage);
+  function prevImage() {
+    if (currentImage == 0) {
+    } else{
+      currentImage += -1;
+    }
+    console.log(currentImage);
+    imageScroll(currentImage);
+  }
+  console.log(imageSlider.children);
+
+  function imageScroll(currentImage) {
+    if (currentImage < 0 ) {
+    } else if (currentImage > imageSlider.children.length) {
+    } else {
+      imageSlider.scroll({ left: 266 * currentImage, behavior: "smooth" });
+    }
+  }
+</script>
