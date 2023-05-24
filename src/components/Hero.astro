@@ -5,15 +5,22 @@ const { backgroundImage } = Astro.props;
 ---
 
 <section>
-  <Logo logoColor="white" frameColor="white" />
+  <Logo logoColor="white" frameColor="white" />'
+  <h2>Boutique bed and breakfast</h2>
 </section>
 
 <style define:vars={{ backgroundImage }}>
+
   section {
     background: linear-gradient(rgba(29, 36, 62, 0.5), rgba(29, 36, 62, 0.5)),var(--backgroundImage) center/cover;
-    backdrop-filter: opacity(50%);
     display: grid;
     place-items: center;
-    height: clamp(250px, 70vh, 100vh);
+    height: 100vh;
+  }
+  h2{
+    color: var(--custom_white);
+  }
+  h2::after {
+    background-color: var(--custom_white);
   }
 </style>

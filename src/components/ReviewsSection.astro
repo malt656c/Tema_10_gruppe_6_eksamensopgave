@@ -26,16 +26,10 @@ const review = await response.json();
         <path d="M9 25L1 13.2293L9 1" stroke="black"></path>
       </svg>
     </div>
-    <div>
+    <div id="reviewContent">
       {
         review.map((test) => {
-          return (
-            <ReviewsCard
-              Navn={test.reviewNavn}
-              Stars={test.reviewStars}
-              Text={test.reviewText}
-            />
-          );
+          return <ReviewsCard Navn={test.reviewNavn} Stars={test.reviewStars} Text={test.reviewText} />;
           console.log(test.reviewStars);
         })
       }
@@ -103,4 +97,40 @@ const review = await response.json();
   }
 </style>
 
-<script></script>
+<script>
+  let currentView = 0;
+  const reviewContent = document.getElementById("reviewContent");
+
+  const rightArrow = document.getElementById("RightArrow");
+
+  rightArrow.addEventListener("click", nextReview);
+
+  function nextReview() {
+    if (currentView != reviewContent.children.length - 1) {
+      currentView++;
+    }
+    currentReview();
+  }
+  const leftArrow = document.getElementById("LeftArrow");
+
+  leftArrow.addEventListener("click", prevReview);
+
+  function prevReview() {
+    if (currentView != 0) {
+      currentView += -1;
+    }
+    currentReview();
+  }
+
+  function currentReview() {
+    for (let i = 0; i < reviewContent.children.length; i++) {
+      if (reviewContent.children[i] != reviewContent.children[currentView]) {
+        reviewContent.children[i].style.display = "none";
+      } else {
+        reviewContent.children[i].style.display = "grid";
+      }
+    }
+  }
+  currentReview();
+
+</script>
