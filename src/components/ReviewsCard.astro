@@ -45,9 +45,5 @@ const {Text, Navn, Stars} = Astro.props;
 </style>
 <script>
   const starSpan = document.querySelector(".stars");
-
-
- console.log(parseInt(starSpan.innerHTML))
-
-
+ starSpan.textContent = "★".repeat(parseInt(starSpan.innerHTML));
 </script>
