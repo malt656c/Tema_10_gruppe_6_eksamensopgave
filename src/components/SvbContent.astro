@@ -5,11 +5,10 @@ import Line from "../components/Line.astro";
 
 <div class="island">
   <h2>ISLAND HOP</h2>
-  <p>
+  <p class="island_body">
     Go island hopping in the South Funen Archipelago and visit Drejø, Skarø, Hjortø, Lyø, Avernakø, Bjørnø, Strynø and Ærø - We sail all year round.' 'There are plenty of opportunities to experience the South Funen Archipelago - also for those who do
     not have their own sailing ship. Here we give an overview of ferry routes and trips with the veteran ferry Helge and the beautiful, old wooden ships, Øhop and the beaches around Svendborg. '
   </p>
-
   <div class="imgcont">
     <img src="../images/ø_kort.webp" alt="island map" />
     <div class="ferry_link"><a href="https://www.visitsvendborg.dk/svendborg/faergeruter-fra-svendborg-havn">SEE FERRY ROUTES</a></div>
@@ -21,7 +20,7 @@ import Line from "../components/Line.astro";
   <h2>FESTIVALS</h2>
   <p>
     Svendborg, a coastal town in Denmark, hosts a vibrant array of festivals celebrating music, culture, sport, and food. The Sound Festival enchants music enthusiasts with diverse genres and captivating performances. Svendborg Arts Week immerses the
-    town in creativity, showcasing artwork and performances that inspire dialogue. The Sports Festival offers thrilling competitions, fostering camaraderie among athletes and spectators. <p />
+    town in creativity, showcasing artwork and performances that inspire dialogue. The Sports Festival offers thrilling competitions, fostering camaraderie among athletes and spectators. </p>
     <img src="../images/festival.jpg" alt="" />
     <p>The Food and Wine Festival indulges taste buds with a delectable array of flavors and aromas. Svendborg's festivals merge music, culture, sport, and food to create an unforgettable experience. From melodic concerts to artistic showcases,
     athletic competitions to culinary delights, the town's festivals have something for everyone. Immerse yourself in Svendborg's vibrant celebrations and discover the magic they offer.
@@ -93,16 +92,16 @@ import Line from "../components/Line.astro";
     
   }
 
+
+/* HEADINGS  */
+
 h2 {
     place-items: center;
-    width: 60%;
+    width: 80%;
     margin: auto;
     margin-top: 4rem;
    
   }
-
-
-
   h3 {
     margin-inline: 2em;
     margin-block: 2em;
@@ -113,35 +112,52 @@ h2 {
     text-align: center;
   }
 
+  .festivals > h2, .nature > h2{
+    color: white;
+  }
 
+  .festivals > h2::after, .nature > h2::after{
+    background-color: white;
+    
+  }
+
+ /*  BODY TEXT */
 
   p {
     margin-inline: 2em;
-    margin-block: 2em;
+    margin-block: 3em;
     font-family: "raleway", sans-serif;
     font-weight: 300;
     font-style: normal;
-    line-height: 150%;
-    max-width: 65ch;
+    line-height: 200%;
+    max-width: 70vw;
   }
+
+  /* IMAGES */
+
   img {
     object-fit: cover;
     width: 100%;
-    max-width: 700px;
+    max-width: 100%;
     max-height: 400px;
   }
-
   .festivals > img{
     border-top: 1rem solid white;
     border-bottom: 1rem solid white;
   }
-
   .nature_pics{
     background-color: white;
     display: grid;
     gap: 1rem;
     padding-block: 1rem;
   }
+
+  .imgcont {
+    padding-block: 2em;
+    position: relative;
+  }
+
+/* LINKS */
 
   a {
     border-style: double;
@@ -157,10 +173,7 @@ h2 {
     padding: 0.5em;
   }
 
-  .imgcont {
-    padding-block: 2em;
-    position: relative;
-  }
+
   .ferry_link {
     position: absolute;
     top: 50%;
@@ -175,6 +188,7 @@ h2 {
 
   }
 
+  /* GENERAL LAYOUT */
   div {
     display: grid;
     place-items: center;
@@ -186,23 +200,41 @@ h2 {
     color: white;
     padding-bottom: 2rem;
   }
-  .festivals > h2, .nature > h2{
-    color: white;
-  }
-  
-  .festivals > h2::after, .nature > h2::after{
+
+  @media (min-width: 600px) {
+    .nature_pics{
     background-color: white;
-    
+    display: flex;
+    flex-direction: row;
+    padding-block: 1rem;
+    object-fit: cover;
+    width: 100%;
+    max-width: 100%;
+    max-height: 400px;
   }
+  }
+  @media (min-width: 1200px) {
 
-
-  . @media (min-width: 1000px) {
+   /*  ISLAND HOP */
     .island {
-      grid-template-columns: 3fr 2fr;
+      grid-template-columns: 2fr 2fr;
       gap: 1rem;
-      padding: 3rem;
+      margin-inline: 7rem;
+      margin-bottom: 2rem;
     }
+    .island > h2{ 
+      grid-column: span 2;
+      margin-bottom: 2rem;
+    }
+   .island_body {
+    margin-inline: 5rem;
+   }
+ /*  FESTIVALS */
 
-    h2{ grid-column: span 2;}
+ .festivals > img{
+border: none;
+ }
+
   }
+   
 </style>
