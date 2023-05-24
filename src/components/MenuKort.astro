@@ -1,67 +1,70 @@
 ---
-import Meal from "./Meal.astro"
-import MenuKortItem from "./MenuKortItem.astro"
+import Meal from "./Meal.astro";
+import MenuKortItem from "./MenuKortItem.astro";
 ---
 
-
 <section>
-<div>
+  <div>
     <Meal mealType="Breakfast">
-    <MenuKortItem dish="GINGER SHOT" description="/W LEMON, APPLE & CARROT"/>
-    <MenuKortItem dish="EGGS" description="SCRAMBLED, FRIED, POACHED"/>
-    <MenuKortItem dish="COCKTAIL SAUSAGES" description="HONEY GLAZED"/>
-    <MenuKortItem dish="ORGANIC BACON" description="FROM HØKILDEGÅRD"/>
-    <MenuKortItem dish="MUSHROOMS" description="/W TARRAGON, RED ONIONS, SPINACH"/>
-    <MenuKortItem dish="BAKED BEANS" description="/W GARLIC"/>
-    <MenuKortItem dish="HOMEBAKED BREAD" description="/W BUTTER"/>
+      <MenuKortItem dish="GINGER SHOT" description="/W LEMON, APPLE & CARROT" />
+      <MenuKortItem dish="EGGS" description="SCRAMBLED, FRIED, POACHED" />
+      <MenuKortItem dish="COCKTAIL SAUSAGES" description="HONEY GLAZED" />
+      <MenuKortItem dish="ORGANIC BACON" description="FROM HØKILDEGÅRD" />
+      <MenuKortItem dish="MUSHROOMS" description="/W TARRAGON, RED ONIONS, SPINACH" />
+      <MenuKortItem dish="BAKED BEANS" description="/W GARLIC" />
+      <MenuKortItem dish="HOMEBAKED BREAD" description="/W BUTTER" />
     </Meal>
-    
+
     <Meal mealType="Dinner">
-      <MenuKortItem dish="TANDOORI CHICKEN BALTI" description="/W CORIANDER"/>
-      <MenuKortItem dish="DAHL CURRY" description="W/ CHICKPEAS, LENTILS & SQUASH"/>
-      <MenuKortItem dish="SPINACH ALOO" description="W/ HOMEMADE PANEER"/>
-      <MenuKortItem dish="BASMATI RICE" description="W/ CORIANDER"/>
-      <MenuKortItem dish="NAAN BREAD" description="/W CORIANDER, BUTTER & GARLIC"/>
+      <MenuKortItem dish="TANDOORI CHICKEN BALTI" description="/W CORIANDER" />
+      <MenuKortItem dish="DAHL CURRY" description="W/ CHICKPEAS, LENTILS & SQUASH" />
+      <MenuKortItem dish="SPINACH ALOO" description="W/ HOMEMADE PANEER" />
+      <MenuKortItem dish="BASMATI RICE" description="W/ CORIANDER" />
+      <MenuKortItem dish="NAAN BREAD" description="/W CORIANDER, BUTTER & GARLIC" />
     </Meal>
-</div>
+  </div>
   <div class="line"></div>
 
-    <div class="flex2">
-      <h3>LUNCH</h3>
-      <h4>FRITTATTA</h4>
-      <p>/W SPINACH, ONION CHEESE</p>
-      <h4>SALMON</h4>
-      <p>HOMESMOKED</p>
-      <h4>HOT POTATO SALAD</h4>
-      <p>W/ CHORIZO, HOKKAIDO, TOMATOES</p>
-      <h4>PORTABELLO MUSHROOMS</h4>
-      <p>W/ TARRAGON, RED ONIONS, SPINACH</p>
-      <h4>HOMEBAKED BREAD</h4>
-      <p>/W BUTTER</p>
-  
-      <img src="" alt="" />
-      <h3>DESSERT</h3>
-      <h4>COFFEE & TEA</h4>
-      <p>/W CREAM & SUGAR</p>
-      <h4>LEMON POSSET</h4>
-      <p>W/ LEMON SHORTBREAD</p>
-      <h4>ROSENHØJ BROWNIE</h4>
-      <p>W/ ROSENHØJ CREAM</p>
-      <h4>FRESH BERRY SORBETS</h4>
-      <p>W/ ORGANIC BERRIES</p>
-    </div>
-  
+  <div>
+    <Meal mealType="Lunch">
+      <MenuKortItem dish="FRITTATTA" description="/W SPINACH, ONION CHEESE" />
+      <MenuKortItem dish="SALMON" description="HOMESMOKED" />
+      <MenuKortItem dish="HOT POTATO SALAD" description="W/ CHORIZO, HOKKAIDO, TOMATOES" />
+      <MenuKortItem dish="PORTABELLO MUSHROOMS" description="W/ TARRAGON, RED ONIONS, SPINACH" />
+      <MenuKortItem dish="HOMEBAKED BREAD" description="/W BUTTER" />
+    </Meal>
+
+    <img src="../images/handsome_devil.jpg" alt="" />
+
+    <Meal mealType="dessert">
+      <MenuKortItem dish="COFFEE & TEA" description="/W CREAM & SUGAR" />
+      <MenuKortItem dish="LEMON POSSET" description="W/ LEMON SHORTBREAD" />
+      <MenuKortItem dish="ROSENHØJ BROWNIE" description="W/ ROSENHØJ CREAM" />
+      <MenuKortItem dish="FRESH BERRY SORBETS" description="W/ ORGANIC BERRIES" />
+    </Meal>
+  </div>
 </section>
 
 <style>
-section{
-  display: grid;
-  grid-template-columns: 1fr 2px 1fr;
-  place-items: center;
-}
-.line{
-  height: 100%;
-  width: 100%;
-  background-color: black;
-}
+  section {
+    display: grid;
+    grid-template-columns: 1fr 2px 1fr;
+    place-items: center;
+  }
+  .line {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+  }
+  div{
+    display: grid;
+    gap: 1rem;
+    place-items: center;
+  }
+  img{
+    width: 50%;
+height: auto;
+
+    padding: 1rem;
+  }
 </style>
