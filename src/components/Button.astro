@@ -1,9 +1,27 @@
 ---
-
+const {link, text} = Astro.props;
 ---
-
+<div>
+    <a href={link}>{text}</a>
+</div>
 
 
 <style>
+  a {
+    border: 5px double black;
+    color: black;
+    text-decoration: none;
+    font-family: "raleway", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    text-align: center;
+    font-size: 2em;
+    padding: 0.5em;
+  }
 
+  div {
+    display: grid;
+    place-items: center;
+    padding-block: 2em;
+  }
 </style>
