@@ -41,13 +41,21 @@ import ContactUsButton from "./ContactUsButton.astro";
     font-size: 30px;
   }
 
-  #grid1-1 {
-    margin-top: 5%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin-bottom: 2%;
+  @media (min-width: 1150px) {
+    #grid1-1 {
+      margin-top: 5%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin-bottom: 2%;
+    }
   }
 
+  @media (max-width: 1150px) {
+    #grid1-1 img {
+      max-width: 100%;
+      margin-top: 5%;
+    }
+  }
   #textEvents p {
     font-family: raleway, sans-serif;
     font-size: 17px;

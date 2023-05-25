@@ -9,7 +9,9 @@ const { dish, description } = Astro.props;
 
 <style>
   article {
-    margin: auto;
+display: grid;
+place-items: center;
+gap: 0.2rem;
   }
 
   h4 {
@@ -17,7 +19,8 @@ const { dish, description } = Astro.props;
     font-weight: 300;
     font-style: normal;
     color: var(--dark_blue);
-    font-size: 2vw;
+    font-size: 3vw;
+    text-align: center;
   }
 
   p {
@@ -25,6 +28,20 @@ const { dish, description } = Astro.props;
     font-weight: 100;
     font-style: normal;
     color: var(--dark_blue);
-    font-size: 1vw;
+    filter: opacity(80%);
+    font-size: 2vw;
+    text-align: center;
+  }
+  @media(min-width:600px){
+article{
+    gap: 0.5rem;
+}
+  h4 {
+    font-size: 2vw;
+  }
+
+  p {
+    font-size: clamp(1rem, 1.5rem, 1.5vw);
+  }
   }
 </style>

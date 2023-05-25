@@ -94,7 +94,13 @@ const review = await response.json();
       border-top: 2px solid var(--custom_black);
       border-bottom: 2px solid var(--custom_black);
     }
-  }
+    .reviews_buttons_box a {
+      transition: all 0.3s ease-in-out;
+    }
+    .reviews_buttons_box a:hover {
+background-color: var(--dark_blue);
+color: var(--custom_white);
+    }
   #RightArrow, #LeftArrow{
     transition: all 0.3s ease-in-out;
     cursor: pointer;
@@ -103,6 +109,7 @@ const review = await response.json();
   #RightArrow:hover, #LeftArrow:hover{
     transform: scale(1.5);
   }
+}
 </style>
 
 <script>
