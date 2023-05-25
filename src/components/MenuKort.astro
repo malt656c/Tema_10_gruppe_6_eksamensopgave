@@ -23,6 +23,7 @@ import MenuKortItem from "./MenuKortItem.astro";
       <MenuKortItem dish="NAAN BREAD" description="/W CORIANDER, BUTTER & GARLIC" />
     </Meal>
   </div>
+
   <div class="line"></div>
 
   <div>
@@ -36,11 +37,12 @@ import MenuKortItem from "./MenuKortItem.astro";
 
     <img src="../images/rose_illustration.svg" alt="illustration of rose" />
 
-    <Meal mealType="DESSERT" />
+    <Meal mealType="DESSERT">
     <MenuKortItem dish="COFFEE & TEA" description="/W CREAM & SUGAR" />
     <MenuKortItem dish="LEMON POSSET" description="W/ LEMON SHORTBREAD" />
     <MenuKortItem dish="ROSENHØJ BROWNIE" description="W/ ROSENHØJ CREAM" />
     <MenuKortItem dish="FRESH BERRY SORBETS" description="W/ ORGANIC BERRIES" />
+    </Meal>
   </div>
 </section>
 
@@ -60,7 +62,7 @@ import MenuKortItem from "./MenuKortItem.astro";
   .line {
     height: 100%;
     width: 100%;
-    background-color: black;
+    background-color: var(--dark_blue);
   }
   div {
     display: grid;
@@ -72,5 +74,6 @@ import MenuKortItem from "./MenuKortItem.astro";
   img {
     width: 50%;
     height: auto;
+margin: auto;
   }
 </style>
