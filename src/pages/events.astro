@@ -1,6 +1,8 @@
 ---
 import NavMenu from "../components/NavMenu.astro";
-import Footer from "../components/Footer.astro"
+import Footer from "../components/Footer.astro";
+import EventsSection from "../components/EventsSection.astro";
+import RhEvents from "../components/RhEvents.astro";
 ---
 
 <html lang="da">
@@ -15,19 +17,16 @@ import Footer from "../components/Footer.astro"
   </head>
   <body>
     <header>
-      <NavMenu iconColor = "var(--custom_black)"/>
+      <NavMenu iconColor="var(--custom_black)" />
     </header>
     <main>
-
+      <EventsSection />
+      <RhEvents />
     </main>
-    <Footer/>
+    <Footer />
   </body>
 </html>
 
-<style>
+<style></style>
 
-</style>
-
-<script>
-    
-</script>
+<script></script>

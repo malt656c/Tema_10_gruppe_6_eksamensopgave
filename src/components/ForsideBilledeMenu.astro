@@ -1,17 +1,23 @@
 ---
 ---
 
-<div><a href=""><span>Rooms</span></a></div>
-<div><a href=""><span>Menu</span></a></div>
-<div><a href=""><span>Events</span></a></div>
-
+<article>
+  <div><a href="rooms.html"><span>Rooms</span></a></div>
+  <div><a href="food.html"><span>Menu</span></a></div>
+  <div><a href="events.html"><span>Events</span></a></div>
+</article>
 <style>
+  article {
+    display: grid;
+    place-items: center;
+    gap: 0.5rem;
+  }
   div {
     display: grid;
     place-items: center;
     width: 100%;
     max-width: 400px;
-    aspect-ratio: 1;
+    aspect-ratio: 3/2;
   }
   div:nth-of-type(1) {
     background: linear-gradient(rgba(29, 36, 62, 0.3), rgba(29, 36, 62, 0.3)), url(../images/bed.jpg) center/cover;
@@ -24,7 +30,7 @@
   }
   span {
     font-family: raleway, sans-serif;
-    font-weight: 600;
+    font-weight: 400;
     font-style: normal;
     color: var(--dark_blue);
     text-transform: uppercase;
@@ -35,17 +41,27 @@
     backdrop-filter: blur(3px);
     padding: 0.75rem;
   }
-  a{
-text-decoration: none;
-width: 100%;
-height: 100%;
-display: grid;
-place-items: center;
-backdrop-filter: blur(0px);
-transition: all 0.2s ;
+  a {
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    backdrop-filter: blur(0px);
+    transition: all 0.2s;
   }
-  a:hover{
+  a:hover {
     backdrop-filter: blur(5px);
   }
-
+  @media (min-width: 1150px) {
+    article {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      padding: 1.5rem;
+    }
+    div {
+      max-width: unset;
+      aspect-ratio: 3/2;
+    }
+  }
 </style>

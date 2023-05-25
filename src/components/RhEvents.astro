@@ -1,0 +1,105 @@
+---
+import Line from "./Line.astro";
+import SoMeIcon from "./SoMeIcons.astro";
+---
+
+<main>
+  <Line />
+  <h3>Rosenhøj Events</h3>
+  <div id="eventBox">
+    <h3>Supperclubs</h3>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur possimus, doloribus dignissimos libero explicabo officia labore. Asperiores consequatur repudiandae commodi cumque cupiditate ea, saepe harum qui sint, voluptatum delectus magni
+      adipisci magnam reiciendis! Veritatis illo cum delectus neque ea deserunt, similique ratione doloremque placeat laudantium?
+    </p>
+    <div id="grid1-1-1">
+      <img src="../images/SC1.png" alt="Supperclub" />
+      <img src="../images/SC2.png" alt="Supperclub" />
+      <img src="../images/SC3.png" alt="Supperclub" />
+    </div>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur possimus, doloribus dignissimos libero explicabo officia labore. Asperiores consequatur repudiandae commodi cumque cupiditate ea, saepe harum qui sint, voluptatum delectus magni
+      adipisci magnam reiciendis! Veritatis illo cum delectus neque ea deserunt, similique ratione doloremque placeat laudantium?
+    </p>
+    <section id="keepUp">
+      <h4>KEEP UP TO DATE</h4>
+      <Line />
+      <SoMeIcon />
+    </section>
+  </div>
+  <!-- Mellemrum -->
+  <div id="eventBox">
+    <h3>Rosenhøj Julemarked</h3>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur possimus, doloribus dignissimos libero explicabo officia labore. Asperiores consequatur repudiandae commodi cumque cupiditate ea, saepe harum qui sint, voluptatum delectus magni
+      adipisci magnam reiciendis! Veritatis illo cum delectus neque ea deserunt, similique ratione doloremque placeat laudantium?
+    </p>
+    <div id="grid1-1-1">
+      <img src="../images/RJ1.png" alt="Julemarked" />
+      <img src="../images/RJ2.png" alt="Julemarked" />
+      <img src="../images/RJ3.png" alt="Julemarked" />
+    </div>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur possimus, doloribus dignissimos libero explicabo officia labore. Asperiores consequatur repudiandae commodi cumque cupiditate ea, saepe harum qui sint, voluptatum delectus magni
+      adipisci magnam reiciendis! Veritatis illo cum delectus neque ea deserunt, similique ratione doloremque placeat laudantium?
+    </p>
+    <section id="keepUp">
+      <h4>KEEP UP TO DATE</h4>
+      <Line />
+      <SoMeIcon />
+    </section>
+  </div>
+</main>
+
+<style>
+  #eventBox {
+    border: #354c82 solid 3px;
+    margin: 5%;
+    padding: 5%;
+  }
+
+  h3 {
+    text-transform: capitalize;
+    margin-top: 2%;
+    font-family: raleway, sans-serif;
+    font-weight: 200;
+    font-size: 60px;
+    text-align: center;
+    color: #354c82;
+  }
+
+  p {
+    font-family: raleway, sans-serif;
+    margin-top: 2%;
+    font-size: 17px;
+    line-height: 200%;
+  }
+
+  #grid1-1-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    justify-self: center;
+  }
+
+  #grid1-1-1 img {
+    max-height: 100%;
+    margin-top: 5%;
+  }
+
+  #keepUp {
+    max-width: 480px;
+    text-align: center;
+    margin-top: 5%;
+    color: #354c82;
+    font-family: raleway, sans-serif;
+    font-size: 30px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h4 {
+    font-weight: lighter;
+    margin-bottom: 3%;
+  }
+</style>

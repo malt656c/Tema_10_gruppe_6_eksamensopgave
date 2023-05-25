@@ -1,13 +1,14 @@
 ---
+const {Text, Navn, Stars} = Astro.props;
+
 ---
 
 <article>
-  <span class="stars">★★★★★</span>
+  <span class="stars">{Stars}</span>
   <p>
-    A fantastically nice accommodation in a calm and relaxing environment. Very nice owners with excellent service. Homemade delicious breakfast (more like a brunch). The suite was very tastefully
-    decorated with a homely feel! An added plus was that there was a fridge. An excellent location close to the city centre, restaurants and harbour. We warmly recommend Rosenhøj bnb and would love to
-    come back soon!
+   {Text}
   </p>
+  <h3>{Navn}</h3>
 </article>
 
 <style>
@@ -15,6 +16,7 @@
     display: grid;
     place-items: center;
     gap: 0.5rem;
+
   }
   p {
     color: var(--custom_black);
@@ -23,10 +25,32 @@
     font-size: 0.9rem;
     line-height: 1.4rem;
     padding-inline: 1rem;
+    max-width: 85ch;
   }
   span {
     color: var(--dark_blue);
     filter: opacity(70%);
     font-size: 2rem;
   }
+  h3{
+    color: var(--custom_black);
+    font-family: raleway, sans-serif;
+    font-weight: 400;
+    font-size: 1.3rem;
+  }
+  h3::before{
+    content: "- ";
+  }
+  .fade_left{
+transform: translateX(-150%);
+filter: opacity(0%);
+  }
+  .fade_right{
+    transform: translateX(150%);
+filter: opacity(0%);
+  }
 </style>
+<script>
+  const starSpan = document.querySelectorAll(".stars");
+ starSpan.forEach(review => review.textContent = "★".repeat(parseInt(review.innerHTML)));
+</script>

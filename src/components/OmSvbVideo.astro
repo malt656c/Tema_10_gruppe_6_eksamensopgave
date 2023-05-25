@@ -1,0 +1,45 @@
+---
+import SvbIcons from "../components/SvbIcons.astro";
+---
+
+<div class="content">
+  <article>
+    <video autoplay muted loop id="video">
+      <source src="../video/om_svb_video.mp4" type="video/mp4" />
+    </video>
+    <h1>SVENDBORG</h1>
+  </article>
+  <SvbIcons />
+</div>
+
+<style>
+  article {
+    position: relative;
+    width: 100%;
+    display: grid;
+    place-items: center;
+  }
+  #video {
+    width: 100%;
+    min-height: 150px;
+    max-height: 400px;
+    object-fit: cover;
+  }
+
+  .content {
+    color: #f1f1f1;
+    padding-top: 8rem;
+  }
+
+  h1 {
+    font-family: "raleway", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12vw;
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    backdrop-filter: brightness(80%);
+  }
+</style>

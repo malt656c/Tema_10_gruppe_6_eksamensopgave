@@ -1,0 +1,60 @@
+---
+const { mealType } = Astro.props;
+---
+
+<article>
+  <div>
+    <h3>{mealType}</h3>
+    <div class="line"></div>
+  </div>
+  <slot />
+</article>
+
+<style>
+  article {
+    display: grid;
+    justify-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+  div {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    gap: 0.5rem;
+  }
+  h3 {
+    font-family: "raleway", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: var(--dark_blue);
+    font-size: 5vw;
+    text-align: center;
+  }
+
+  .line {
+    height: 2px;
+    background: #354c82;
+    width: 60%;
+    margin: auto;
+  }
+  @media(min-width:700px){
+    article {
+    gap: 2rem;
+    padding: 1rem;
+  }
+  div {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    gap: 0.5rem;
+  }
+  h3 {
+    font-size: 3vw;
+  }
+
+  .line {
+
+  }
+  }
+</style>
