@@ -75,17 +75,21 @@ import SoMeIcon from "./SoMeIcons.astro";
     line-height: 200%;
   }
 
-  #grid1-1-1 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-content: center;
-    justify-self: center;
+  @media (min-width: 1150px) {
+    #grid1-1-1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      justify-content: center;
+      justify-self: center;
+    }
   }
 
   #grid1-1-1 img {
-    max-height: 100%;
+    max-width: 100%;
+    max-height: 345px;
     margin-top: 5%;
   }
+
 
   #keepUp {
     max-width: 480px;
