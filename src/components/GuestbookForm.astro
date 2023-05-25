@@ -1,0 +1,75 @@
+---
+
+---
+
+
+
+    <form action="">
+      <input type="text" name="reviewNavn" placeholder="Name" required />
+  
+      <input type="text" name="reviewText" placeholder="Message" required />
+  
+      <button>Send</button>
+    </form>
+
+  <style>
+  form {
+    display: grid;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 500px;
+    padding: 0.75rem;
+  }
+  input {
+    height: 2rem;
+    font-family: raleway, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1rem;
+    text-indent: 0.5rem;
+    border-radius: 5px;
+    border: none;
+    outline: 1px solid var(--custom_black);
+  }
+  input:last-of-type {
+    height: 4rem;
+  }
+  button {
+    color: var(--custom_white);
+    background-color: var(--light_blue);
+    font-family: raleway, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    padding-block: 0.5rem;
+    border-radius: 5px;
+    border: none;
+  }
+
+</style>
+
+<script>
+    const apiUrl = "https://znpuvpweojnqtmfuiiqr.supabase.co/rest/v1/guestbook";
+    const apiKey ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpucHV2cHdlb2pucXRtZnVpaXFyIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQ5MjIxNzgsImV4cCI6MjAwMDQ5ODE3OH0.1r8u1kfw4xPxzwjf46FeUeGkL_5P9MWRzr5DdtsHNKs";
+    const form = document.querySelector("form");
+    
+    form.addEventListener("submit", sendTestimonial);
+  
+    function sendTestimonial(event) {
+      event.preventDefault();
+      const formData = form.elements;
+      let reviewNavn = formData.reviewNavn.value;
+      let reviewText = formData.reviewText.value;
+  
+      fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          apikey: apiKey,
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ reviewNavn, reviewText }),
+      });
+    }
+  </script>
