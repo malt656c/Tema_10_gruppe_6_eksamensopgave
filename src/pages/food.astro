@@ -15,7 +15,7 @@ import MenuKort from "../components/MenuKort.astro";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <link rel="stylesheet" href="https://use.typekit.net/xcg1awn.css" />
-    <link rel="stylesheet" href="../../public/styles/global.css" />
+    <!--   <link rel="stylesheet" href="../../public/styles/global.css" /> -->
     <title>Rosenhøj Bed & Breakfast</title>
   </head>
   <body>
@@ -35,51 +35,61 @@ import MenuKort from "../components/MenuKort.astro";
     </p>
     <Line />
     <h3>BELOW IS A SUGGESTION TO WHAT WE COULD SERVE DURING YOUR STAY AT ROSENHØJ</h3>
-    <MenuKort />
-    <h3>IF YOU ARE INTERESTED IN FOOD OUT OF THE HOUSE, PLEASE CONTACT US</h3>
-    <ContactUsButton />
-    <img src="../images/menu/image8.jpeg" alt="" />
-    <Footer />
+    <div class="menu">
+      <MenuKort />
+      <h3>IF YOU ARE INTERESTED IN FOOD OUT OF THE HOUSE, PLEASE CONTACT US</h3>
+      <ContactUsButton />
+      <img src="../images/menu/image8.jpeg" alt="" />
+      <Footer />
+    </div>
   </body>
-</html>
 
-<style>
-  p {
-    margin-inline: 2.5em;
-    margin-block: 2em;
-    font-family: "raleway", sans-serif;
-    font-weight: 300;
-    font-style: normal;
-    line-height: 150%;
-  }
-
-  h3 {
-    text-align: center;
-    margin-inline: 2em;
-    margin-block: 2em;
-    font-family: "raleway", sans-serif;
-    font-weight: 300;
-    font-style: normal;
-    line-height: 150%;
-    color: #354c82;
-  }
-
-  img {
-    width: 100%;
-    padding-block: 2em;
-  }
-
-  @media (min-width: 1000px) {
+  <style>
+    .menu {
+      margin: auto;
+      padding: 1rem;
+    }
     p {
-      margin-inline: 10em;
-      padding-block: 2rem;
-      font-size: 1.5vw;
+      margin-inline: 2.5em;
+      margin-block: 2em;
+      font-family: "raleway", sans-serif;
+      font-weight: 300;
+      font-style: normal;
+      line-height: 150%;
     }
 
     h3 {
-      font-size: 1.7vw;
+      text-align: center;
+      margin-inline: 2em;
+      margin-block: 2em;
+      font-family: "raleway", sans-serif;
+      font-weight: 300;
+      font-style: normal;
+      line-height: 150%;
+      color: #354c82;
     }
-  }
-</style>
 
-<script></script>
+    img {
+      width: 100%;
+      padding-block: 2em;
+    }
+
+    @media (min-width: 1000px) {
+      p {
+        margin-inline: 10em;
+        padding-block: 2rem;
+        font-size: 1.5vw;
+      }
+
+      h3 {
+        font-size: 1.7vw;
+      }
+
+      .menu {
+        padding: 3rem;
+      }
+    }
+  </style>
+
+  <script></script>
+</html>
