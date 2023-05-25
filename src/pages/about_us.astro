@@ -2,6 +2,8 @@
 import NavMenu from "../components/NavMenu.astro";
 import Footer from "../components/Footer.astro";
 import PageTitle from "../components/PageTitle.astro";
+import Line from "../components/Line.astro";
+import Button from "../components/Button.astro";
 ---
 
 <html lang="da">
@@ -21,7 +23,8 @@ import PageTitle from "../components/PageTitle.astro";
 
     <main>
       <PageTitle>ABOUT US</PageTitle>
-      <div>
+      <Line />
+      <section class="grid-1_1">
         <p>
           Rosenhøj is owned and operated by Trine and Patrick Johnson. Trine is
           from Denmark, a qualified chef with many years of experience in London
@@ -36,34 +39,104 @@ import PageTitle from "../components/PageTitle.astro";
           to see and do and we will help you organise whatever you want to do –
           its your precious holiday, we will help you make it great.
         </p>
-      </div>
+      </section>
+      <Line />
       <h2>OUR ETHOS</h2>
-      <p>
+      <p class="mellemtekst">
         Stay at Rosenhøj and feel the atmosphere . We are passionate about
         quality, healthy , local and sustainable chef cooked food. We care about
         animals and our philosophy is – eat less meat and if you do – make it
         the best local quality meat , with the best welfare standards.
       </p>
-      <img src="/public/images/kager.png" alt="kager" />
-      <img src="/public/images/pizza.png" alt="pizza" />
-      <img src="/public/images/fisk.png" alt="pizza" />
-      <h2>STAY WITH CHEF</h2>
-      <p>
-        Trine is a qualified chef with many years of experience in London
-        restaurants. Patrick was a London Bobby for 32 years. Now retired from
-        Police work and with a passion for food and hosting. We will look after
-        you like family! Rosenhøj is all about local, seasonal and healthy food
-        (but with the occasional treat) We try our best to be sustainable, of
-        course recycling all we can as well a considering ‘food airmiles’ when
-        creating menus.
-      </p>
-      <img src="/public/images/chef.png" alt="cheffer af rosenhoej" />
+      <div class="billeder">
+        <img src="/public/images/kager.png" alt="kager" />
+        <img src="/public/images/pizza.png" alt="pizza" />
+        <img class="fisk" src="/public/images/fisk.png" alt="pizza" />
+      </div>
+      <Line />
+      <section class="grid-1_1">
+        <h2>STAY WITH CHEF</h2>
+
+        <p>
+          Trine is a qualified chef with many years of experience in London
+          restaurants. Patrick was a London Bobby for 32 years. Now retired from
+          Police work and with a passion for food and hosting. We will look
+          after you like family! Rosenhøj is all about local, seasonal and
+          healthy food (but with the occasional treat) We try our best to be
+          sustainable, of course recycling all we can as well a considering
+          ‘food airmiles’ when creating menus.
+        </p>
+        <img src="/public/images/chef.png" alt="cheffer af rosenhoej" />
+      </section>
+
+      <Button link="food.html" text="SEE MENU" />
     </main>
-
-    <Footer />
   </body>
+
+  <Footer />
+
+  <style>
+    h2 {
+      text-align: center;
+      max-width: fit-content;
+      margin: auto;
+    }
+    p {
+      max-width: 55ch;
+
+      margin: auto;
+      padding-inline: 2rem;
+    }
+    main {
+      padding-top: 100px;
+      display: grid;
+      place-items: center;
+      gap: 1rem;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      padding-inline: 1rem;
+      max-height: 300px;
+    }
+
+    .fisk {
+      object-position: bottom;
+    }
+    section {
+      display: grid;
+      gap: 1rem;
+    }
+    @media (min-width: 750px) {
+      section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+      .billeder {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+      h2,
+      p {
+        grid-column: 1/2;
+      }
+      img:last-of-type {
+        grid-row: 1/3;
+        grid-column: 2/3;
+      }
+      .mellemtekst {
+        max-width: 750px;
+      }
+      section:first-of-type img {
+        grid-column: 1/2;
+      }
+      section:first-of-type p {
+        grid-column: 2/3;
+      }
+    }
+  </style>
+
+  <script></script>
 </html>
-
-<style></style>
-
-<script></script>
