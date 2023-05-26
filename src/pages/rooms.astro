@@ -3,6 +3,7 @@ import NavMenu from "../components/NavMenu.astro";
 import Footer from "../components/Footer.astro";
 import Line from "../components/Line.astro";
 import PageTitle from "../components/PageTitle.astro";
+import Button from "../components/Button.astro";
 
 ---
 
@@ -24,10 +25,11 @@ import PageTitle from "../components/PageTitle.astro";
     <main>
       <PageTitle>Rooms</PageTitle>
       <Line></Line>
-      <section class="Tekstboks">
+      <section class="tekstboks1">
         <h3>
           Rosenhøj En - Suite Gardenview
         </h3>
+
         <p>
           Sleeps up to 4
         </p>
@@ -35,6 +37,72 @@ import PageTitle from "../components/PageTitle.astro";
         <h3>
           1500.- DKK
         </h3>
+
+        <img src="public/images/bed.jpg" alt="bed">
+      </section>
+
+      <Line></Line>
+
+      <Button>
+        See Room
+      </Button>
+
+      <Line></Line>
+
+      <section class="tekstboks2">
+        <h3>
+          Rosenhøj Glamping
+        </h3>
+
+        <p>
+          Sleeps up to 4
+        </p>
+
+        <h3>
+          950.- DKK
+        </h3>
+
+        <img src="public/images/rosenhøj-15.jpg" alt="glamping">
+      </section>
+
+      <Line></Line>
+
+      <Button>See Room</Button>
+
+      <Line></Line>
+
+      <section class="tekstboks3">
+        <h3>
+          Rosenhøj En - Suite Sea view with own terrace
+        </h3>
+
+        <p>
+          Sleeps up to 4
+        </p>
+
+        <h3>
+          1500.- DKK
+        </h3>
+
+        <section class="billedetekst">
+          <h3>
+            Coming Soon
+          </h3>
+          <p>
+            Available from June 2023
+          </p>
+        </section>
+
+
+
+        <img src="public/images/bed.jpg" alt="bed">
+
+        <Line></Line>
+
+        <Button>See Room</Button>
+
+        <Line></Line>
+
       </section>
     </main>
     <Footer/>
@@ -54,6 +122,22 @@ import PageTitle from "../components/PageTitle.astro";
     margin: auto;
     margin-top: 1rem;
   }
+
+  section {
+    display: grid;
+      gap: 1rem;
+  }
+
+  img {
+    width: 100%;
+      height: auto;
+      object-fit: cover;
+      padding-inline: 5px;
+      max-height: 400px;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+  }
+
 
 </style>
 
