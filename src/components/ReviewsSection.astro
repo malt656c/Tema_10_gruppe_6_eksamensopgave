@@ -1,8 +1,8 @@
 ---
+import GuestbookForm from "./GuestbookForm.astro"
 import ReviewsCard from "./ReviewsCard.astro";
-
-const apiUrl = "https://znpuvpweojnqtmfuiiqr.supabase.co/rest/v1/reviews?approval=is.true";
-
+let { reviewSource } = Astro.props;
+const apiUrl = "https://znpuvpweojnqtmfuiiqr.supabase.co/rest/v1/guestbook?approval=is.true";
 const apiKey =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpucHV2cHdlb2pucXRtZnVpaXFyIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQ5MjIxNzgsImV4cCI6MjAwMDQ5ODE3OH0.1r8u1kfw4xPxzwjf46FeUeGkL_5P9MWRzr5DdtsHNKs";
 
@@ -28,9 +28,8 @@ const review = await response.json();
     </div>
     <div id="reviewContent">
       {
-        review.map((test) => {
-          return <ReviewsCard Navn={test.reviewNavn} Stars={test.reviewStars} Text={test.reviewText} />;
-          console.log(test.reviewStars);
+        review?.map((test) => {
+          return <ReviewsCard Navn={test.reviewNavn} Stars={test?.reviewStars} Text={test.reviewText} />;
         })
       }
     </div>
@@ -40,11 +39,11 @@ const review = await response.json();
       </svg>
     </div>
   </div>
-
   <div class="reviews_buttons_box">
-    <a href="https://goo.gl/maps/ANDT8Xss7Wv6u9TB8">Google Reviews</a>
-    <a href="guestbook.html">Guestbook</a>
+    <a href="">google reviews</a>
+    <a href="">Guestbook</a>
   </div>
+<GuestbookForm/>
 </section>
 
 <style>
@@ -98,18 +97,20 @@ const review = await response.json();
       transition: all 0.3s ease-in-out;
     }
     .reviews_buttons_box a:hover {
-background-color: var(--dark_blue);
-color: var(--custom_white);
+      background-color: var(--dark_blue);
+      color: var(--custom_white);
     }
-  #RightArrow, #LeftArrow{
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
-    padding: 1rem;
+    #RightArrow,
+    #LeftArrow {
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+      padding: 1rem;
+    }
+    #RightArrow:hover,
+    #LeftArrow:hover {
+      transform: scale(1.5);
+    }
   }
-  #RightArrow:hover, #LeftArrow:hover{
-    transform: scale(1.5);
-  }
-}
 </style>
 
 <script>
@@ -147,5 +148,4 @@ color: var(--custom_white);
     }
   }
   currentReview();
-
 </script>

@@ -1,6 +1,10 @@
 ---
 import NavMenu from "../components/NavMenu.astro";
-import Footer from "../components/Footer.astro"
+import Footer from "../components/Footer.astro";
+import Line from "../components/Line.astro";
+import PageTitle from "../components/PageTitle.astro";
+import Button from "../components/Button.astro";
+
 ---
 
 <html lang="da">
@@ -19,13 +23,141 @@ import Footer from "../components/Footer.astro"
     </header>
     <main>
 
+      <section class="tekstboks1">
+        <h1>
+          Rosenhøj En - Suite Gardenview
+        </h1>
+
+        <p>
+          Sleeps up to 4
+        </p>
+
+        <h3>
+          1500.- DKK
+        </h3>
+      </section>
+
+      <img src="public/images/bed.jpg" alt="bed">
+
+      <section class="tekstboks2">
+
+        <p>
+          Newly refurnished bedroom with King Size bed, including a single daybed in the corner of the bedroom, perfect for small family’s up to 4. Your own private living room with fireplace and bathroom. Television with premium channels. Coffee and tea making station. This is a home away from home.
+        </p>
+
+        <Line></Line>
+        
+      <sections class="tekstboks3">
+        <ul class="Information">
+          <li>
+            King Size Bed.
+          </li>
+          <li>
+            Newly refurnished.
+          </li>
+          <li>
+            Fast WiFi.
+          </li>
+          <li>
+            Extra daybed in the corner of the bedroom.
+          </li>
+          <li>
+            Private living room with fireplace.
+          </li>
+          <li>
+            Television with premium channels.
+          </li>
+          <li>
+            Private bathroom.
+          </li>
+          <li>
+            Coffee and tea making station.
+          </li>
+          <li>
+            Sleeps 2, max 4.
+          </li>
+          <li>
+            Homemade continental breakfast.
+          </li>
+        </ul>
+
+          <img src="public/images/Danas_illustration.png" alt="Room">
+
+      </section>
+
+
+      <Line></Line>
+      <Button text="Book Room"></Button>
+      <Line></Line>
+
+      
+
     </main>
     <Footer/>
   </body>
 </html>
 
 <style>
+main {
+      padding-top: 100px;
+      display: grid;
+      gap: 1rem;
+    }
 
+    img {
+    width: 100%;
+      height: auto;
+      object-fit: cover;
+      padding-inline: 5px;
+      max-height: 500px;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+  }
+
+  h1 {
+    text-align: center;
+    margin: auto;
+    margin-top: 1rem;
+  }
+
+  p {
+    text-align: center;
+    margin: auto;
+    margin-top: 1rem;
+  }
+
+  h3 {
+    text-align: right;
+    margin: auto;
+    margin-top: 1rem;
+    margin-right: 5px;
+  }
+
+  ul {
+    text-align: center;
+  }
+
+  .billedeboks {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    
+  }
+
+  @media (min-width: 1150px) {
+    .tekstboks3 {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    img {
+    width: 100%;
+      height: auto;
+      object-fit: cover;
+      padding-inline: 5px;
+      max-height: 500px;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+  }
+  }
 </style>
 
 <script>
