@@ -38,8 +38,9 @@ import Button from "../components/Button.astro";
           1500.- DKK
         </h3>
 
-        <img src="public/images/bed.jpg" alt="bed">
       </section>
+
+      <img src="public/images/bed.jpg" alt="bed">
 
       <Line></Line>
 
@@ -62,8 +63,9 @@ import Button from "../components/Button.astro";
           950.- DKK
         </h3>
 
-        <img src="public/images/rosenhøj-15.jpg" alt="glamping">
       </section>
+
+      <img src="public/images/rosenhøj-15.jpg" alt="glamping">
 
       <Line></Line>
 
@@ -84,26 +86,29 @@ import Button from "../components/Button.astro";
           1500.- DKK
         </h3>
 
-        <section class="billedetekst">
-          <h3>
-            Coming Soon
-          </h3>
-          <p>
-            Available from June 2023
-          </p>
-        </section>
 
 
 
-        <img src="public/images/bed.jpg" alt="bed">
-
-        <Line></Line>
-
-        <Button>See Room</Button>
-
-        <Line></Line>
 
       </section>
+
+      <img src="public/images/bed.jpg" alt="bed">
+
+      <Line></Line>
+
+      <Button>See Room</Button>
+
+      <Line></Line>
+
+      <section class="billedetekst">
+        <h3>
+          Coming Soon
+        </h3>
+        <p>
+          Available from June 2023
+        </p>
+      </section>
+
     </main>
     <Footer/>
   </body>
@@ -111,6 +116,11 @@ import Button from "../components/Button.astro";
 
 <style>
 
+main {
+      padding-top: 100px;
+      display: grid;
+      gap: 1rem;
+    }
   h3 {
     text-align: center;
     margin: auto;
@@ -138,6 +148,19 @@ import Button from "../components/Button.astro";
       margin-bottom: 1rem;
   }
 
+  @media (min-width: 1150px) {
+    .tekstboks1 {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .tekstboks2 {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .tekstboks3 {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
 
 </style>
 
