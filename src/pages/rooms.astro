@@ -1,6 +1,9 @@
 ---
 import NavMenu from "../components/NavMenu.astro";
-import Footer from "../components/Footer.astro"
+import Footer from "../components/Footer.astro";
+import Line from "../components/Line.astro";
+import PageTitle from "../components/PageTitle.astro";
+
 ---
 
 <html lang="da">
@@ -17,14 +20,40 @@ import Footer from "../components/Footer.astro"
     <header>
       <NavMenu iconColor = "var(--custom_black)"/>
     </header>
-    <main>
 
+    <main>
+      <PageTitle>Rooms</PageTitle>
+      <Line></Line>
+      <section class="Tekstboks">
+        <h3>
+          Rosenhøj En - Suite Gardenview
+        </h3>
+        <p>
+          Sleeps up to 4
+        </p>
+
+        <h3>
+          1500.- DKK
+        </h3>
+      </section>
     </main>
     <Footer/>
   </body>
 </html>
 
 <style>
+
+  h3 {
+    text-align: center;
+    margin: auto;
+    margin-top: 1rem;
+  }
+
+  p {
+    text-align: center;
+    margin: auto;
+    margin-top: 1rem;
+  }
 
 </style>
 
