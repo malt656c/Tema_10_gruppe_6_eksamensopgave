@@ -1,12 +1,13 @@
 ---
+const { lineWidth } = Astro.props;
 ---
 
 <div class="line"></div>
-<style>
+<style define:vars={{ lineWidth }}>
   .line {
     height: 2px;
     background: var(--dark_blue);
-    width: 70%;
+    width: var(--lineWidth);
     margin: auto;
   }
 </style>
