@@ -1,23 +1,22 @@
 ---
-import KontaktForm from "./KontaktForm.astro"
+import KontaktForm from "./KontaktForm.astro";
 ---
 
 <section>
   <h2>Contact Us</h2>
   <p>
-    At Rosenhøj, we are dedicated to providing our guests with exceptional service and an unforgettable experience. We welcome your feedback and requests regarding accommodations, food, or events you
-    would like to hold at our bed and breakfast. Contact us today to discuss your needs and preferences, and our team will work closely with you to ensure your stay at Rosenhøj is everything you
-    desire and more. We can't wait to hear from you!
+    At Rosenhøj, we are dedicated to providing our guests with exceptional service and an unforgettable experience. We welcome your feedback and requests regarding accommodations, food, or events you would like to hold at our bed and breakfast.
+    Contact us today to discuss your needs and preferences, and our team will work closely with you to ensure your stay at Rosenhøj is everything you desire and more. We can't wait to hear from you!
   </p>
-<KontaktForm/>
+  <KontaktForm />
 </section>
 
 <style>
-      section {
+  section {
     display: grid;
     place-items: center;
     gap: 1rem;
-    padding-block: 1.5rem;
+    padding-block: 4rem;
   }
 
   p {
@@ -28,14 +27,14 @@ import KontaktForm from "./KontaktForm.astro"
     place-items: center;
     gap: 1rem;
   }
-  @media (min-width: 1150px){
-    section{
+  @media (min-width: 1150px) {
+    section {
       grid-template-columns: repeat(2, 1fr);
     }
-    h2, p{
+    h2,
+    p {
       grid-column: 1/2;
       max-width: 65ch;
     }
-
   }
 </style>

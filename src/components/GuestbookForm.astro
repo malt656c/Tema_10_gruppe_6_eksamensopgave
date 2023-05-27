@@ -1,18 +1,20 @@
 ---
-
 ---
 
+<h2>LEAVE US A REVIEW</h2>
 
+<form action="">
+  <input type="text" name="reviewNavn" placeholder="Name" required />
 
-    <form action="">
-      <input type="text" name="reviewNavn" placeholder="Name" required />
-  
-      <input type="text" name="reviewText" placeholder="Message" required />
-  
-      <button>Send</button>
-    </form>
+  <input type="text" name="reviewText" placeholder="Review" required />
 
-  <style>
+  <button>Send</button>
+</form>
+
+<style>
+  h2 {
+    padding-block: 3rem;
+  }
   form {
     display: grid;
     gap: 0.5rem;
@@ -40,30 +42,29 @@
     border-radius: 5px;
     border: none;
   }
-
 </style>
 
 <script>
-    const apiUrl = "https://znpuvpweojnqtmfuiiqr.supabase.co/rest/v1/guestbook";
-    const apiKey ="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpucHV2cHdlb2pucXRtZnVpaXFyIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQ5MjIxNzgsImV4cCI6MjAwMDQ5ODE3OH0.1r8u1kfw4xPxzwjf46FeUeGkL_5P9MWRzr5DdtsHNKs";
-    const form = document.querySelector("form");
-    
-    form.addEventListener("submit", sendTestimonial);
-  
-    function sendTestimonial(event) {
-      event.preventDefault();
-      const formData = form.elements;
-      let reviewNavn = formData.reviewNavn.value;
-      let reviewText = formData.reviewText.value;
-  
-      fetch(apiUrl, {
-        method: "POST",
-        headers: {
-          apikey: apiKey,
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ reviewNavn, reviewText }),
-      });
-    }
-  </script>
+  const apiUrl = "https://znpuvpweojnqtmfuiiqr.supabase.co/rest/v1/guestbook";
+  const apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpucHV2cHdlb2pucXRtZnVpaXFyIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQ5MjIxNzgsImV4cCI6MjAwMDQ5ODE3OH0.1r8u1kfw4xPxzwjf46FeUeGkL_5P9MWRzr5DdtsHNKs";
+  const form = document.querySelector("form");
+
+  form.addEventListener("submit", sendTestimonial);
+
+  function sendTestimonial(event) {
+    event.preventDefault();
+    const formData = form.elements;
+    let reviewNavn = formData.reviewNavn.value;
+    let reviewText = formData.reviewText.value;
+
+    fetch(apiUrl, {
+      method: "POST",
+      headers: {
+        apikey: apiKey,
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ reviewNavn, reviewText }),
+    });
+  }
+</script>
