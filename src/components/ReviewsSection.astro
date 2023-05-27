@@ -1,10 +1,10 @@
 ---
-import GuestbookForm from "./GuestbookForm.astro"
+import Line from "../components/Line.astro";
+import GuestbookForm from "./GuestbookForm.astro";
 import ReviewsCard from "./ReviewsCard.astro";
 let { reviewSource } = Astro.props;
 const apiUrl = "https://znpuvpweojnqtmfuiiqr.supabase.co/rest/v1/guestbook?approval=is.true";
-const apiKey =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpucHV2cHdlb2pucXRtZnVpaXFyIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQ5MjIxNzgsImV4cCI6MjAwMDQ5ODE3OH0.1r8u1kfw4xPxzwjf46FeUeGkL_5P9MWRzr5DdtsHNKs";
+const apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpucHV2cHdlb2pucXRtZnVpaXFyIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQ5MjIxNzgsImV4cCI6MjAwMDQ5ODE3OH0.1r8u1kfw4xPxzwjf46FeUeGkL_5P9MWRzr5DdtsHNKs";
 
 const response = await fetch(apiUrl, {
   method: "GET",
@@ -39,11 +39,12 @@ const review = await response.json();
       </svg>
     </div>
   </div>
+
+  <GuestbookForm />
   <div class="reviews_buttons_box">
     <a href="">google reviews</a>
     <a href="">Guestbook</a>
   </div>
-<GuestbookForm/>
 </section>
 
 <style>
@@ -51,35 +52,41 @@ const review = await response.json();
     display: grid;
     place-items: center;
     gap: 0.5rem;
-    padding-block: 1.5rem;
+    padding-block: 4rem;
   }
   #ReviewsBox {
     display: grid;
     place-items: center;
     grid-template-columns: 30px 1fr 30px;
     width: 100%;
+    padding-block: 3rem;
+    border-bottom: 1px solid var(--custom_black);
   }
   .reviews_buttons_box {
     display: grid;
     place-items: center;
-    width: 90%;
+    width: 100%;
     padding: 2rem;
     gap: 1.5rem;
     padding-block: 1rem;
-    margin-top: 2rem;
-    border-top: 1px solid black;
+    /*  margin-top: 4rem; */
+    /*  background-color: var(--light_blue); */
+    padding-block: 2rem;
   }
   .reviews_buttons_box a {
-    color: var(--custom_black);
+    color: var(--light_blue);
+    border-style: double;
+
     text-transform: uppercase;
     font-size: clamp(1rem, 1.5rem, 3vw);
     text-decoration: none;
     padding: 0.75rem;
-    outline: 1px solid var(--custom_black);
+    outline: 1px solid var(--light_blue);
     width: 100%;
     max-width: 250px;
     text-align: center;
   }
+
   @media (min-width: 1150px) {
     #ReviewsBox {
       width: fit-content;
@@ -87,8 +94,6 @@ const review = await response.json();
     .reviews_buttons_box {
       grid-template-columns: repeat(2, auto);
       justify-content: center;
-      border-top: 2px solid var(--custom_black);
-      border-bottom: 2px solid var(--custom_black);
     }
     .reviews_buttons_box a {
       transition: all 0.3s ease-in-out;
