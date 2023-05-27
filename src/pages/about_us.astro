@@ -19,12 +19,11 @@ import Button from "../components/Button.astro";
   <body>
     <header>
       <NavMenu iconColor="var(--custom_black)" />
+      <PageTitle>ABOUT US</PageTitle>
     </header>
 
     <main>
-      <PageTitle>ABOUT US</PageTitle>
-      <Line />
-      <section class="grid-1_1">
+      <section>
         <p>
           Rosenhøj is owned and operated by Trine and Patrick Johnson. Trine is from Denmark, a qualified chef with many years of experience in London restaurants. Patrick was a London Bobby for 32
           years. Now retired from Police work and with a passion for food and hosting.
@@ -35,21 +34,22 @@ import Button from "../components/Button.astro";
           picnics – so much to see and do and we will help you organise whatever you want to do – its your precious holiday, we will help you make it great.
         </p>
       </section>
-      <Line />
-      <h2>OUR ETHOS</h2>
-      <p class="mellemtekst">
-        Stay at Rosenhøj and feel the atmosphere . We are passionate about quality, healthy , local and sustainable chef cooked food. We care about animals and our philosophy is – eat less meat and if
-        you do – make it the best local quality meat , with the best welfare standards.
-      </p>
-      <div class="billeder">
-        <img src="/public/images/kager.png" alt="kager" />
-        <img src="/public/images/pizza.png" alt="pizza" />
-        <img class="fisk" src="/public/images/fisk.png" alt="pizza" />
-      </div>
-      <Line />
-      <section class="grid-1_1">
+      <Line lineWidth="80%"/>
+      <section>
+        <h2>OUR ETHOS</h2>
+        <p>
+          Stay at Rosenhøj and feel the atmosphere . We are passionate about quality, healthy , local and sustainable chef cooked food. We care about animals and our philosophy is – eat less meat and if
+          you do – make it the best local quality meat , with the best welfare standards.
+        </p>
+        <div>
+          <img src="/public/images/kager.png" alt="kager" />
+          <img src="/public/images/pizza.png" alt="pizza" />
+          <img class="fisk" src="/public/images/fisk.png" alt="pizza" />
+        </div>
+      </section>
+      <Line lineWidth="80%"/>
+      <section>
         <h2>STAY WITH CHEF</h2>
-
         <p>
           Trine is a qualified chef with many years of experience in London restaurants. Patrick was a London Bobby for 32 years. Now retired from Police work and with a passion for food and hosting.
           We will look after you like family! Rosenhøj is all about local, seasonal and healthy food (but with the occasional treat) We try our best to be sustainable, of course recycling all we can
@@ -57,46 +57,33 @@ import Button from "../components/Button.astro";
         </p>
         <img src="/public/images/chef.png" alt="cheffer af rosenhoej" />
       </section>
-
       <Button link="food.html" text="SEE MENU" />
     </main>
+    <Footer />
   </body>
 
-  <Footer />
+
 
   <style>
-    h2 {
-      text-align: center;
-      max-width: fit-content;
-      margin: auto;
-    }
-    p {
-      max-width: 55ch;
-
-      margin: auto;
-      padding-inline: 2rem;
-    }
-    main {
-
-      display: grid;
-      place-items: center;
-      gap: 1rem;
-    }
-    img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      padding-inline: 1rem;
-      max-height: 300px;
-    }
-
-    .fisk {
-      object-position: bottom;
-    }
-    section {
-      display: grid;
-      gap: 1rem;
-    }
+section{
+  display: grid;
+  place-items: center;
+  gap: 1.5rem;
+  padding-block: 1rem;
+}
+img{
+  width: 100%;
+}
+p{
+  line-height: 2rem;
+}
+h2{
+  color: var(--dark_blue);
+  font-size: clamp(1rem, 7vw, 2rem);
+}
+h2::after{
+  display: none;
+}
     @media (min-width: 750px) {
       section {
         display: grid;

@@ -1,6 +1,7 @@
 ---
 import Meal from "./Meal.astro";
 import MenuKortItem from "./MenuKortItem.astro";
+import Line from "./Line.astro"
 ---
 
 <section>
@@ -24,7 +25,7 @@ import MenuKortItem from "./MenuKortItem.astro";
     </Meal>
   </div>
 
-  <div class="line"></div>
+  <Line lineWidth="100%"/>
 
   <div>
     <Meal mealType="LUNCH">
@@ -59,11 +60,7 @@ import MenuKortItem from "./MenuKortItem.astro";
     border-width: 5px;
     border-color: var(--dark_blue);
   }
-  .line {
-    height: 100%;
-    width: 100%;
-    background-color: var(--dark_blue);
-  }
+
   div {
     display: grid;
     gap: 1rem;
