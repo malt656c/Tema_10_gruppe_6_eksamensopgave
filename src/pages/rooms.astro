@@ -4,7 +4,6 @@ import Footer from "../components/Footer.astro";
 import Line from "../components/Line.astro";
 import PageTitle from "../components/PageTitle.astro";
 import Button from "../components/Button.astro";
-
 ---
 
 <html lang="da">
@@ -19,145 +18,118 @@ import Button from "../components/Button.astro";
   </head>
   <body>
     <header>
-      <NavMenu iconColor = "var(--custom_black)"/>
+      <NavMenu iconColor="var(--custom_black)" />
+      <PageTitle>Rooms</PageTitle>
     </header>
 
     <main>
-      <PageTitle>Rooms</PageTitle>
-      <Line lineWidth="80%"/>
-      <section class="tekstboks1">
-        <h3>
-          Rosenhøj En - Suite Gardenview
-        </h3>
+      <article>
+        <div>
+          <h3>Rosenhøj En - Suite Gardenview</h3>
+          <p>Sleeps up to 4</p>
+          <span>1500.- DKK</span>
+        </div>
+        <img src="public/images/bed.jpg" alt="bed" />
+        <Button link="sv_rooms.html" text="See Room" />
+        <Line lineWidth="100%" />
+      </article>
 
-        <p>
-          Sleeps up to 4
-        </p>
+      <article>
+<div>
+          <h3>Rosenhøj Glamping</h3>
+          <p>Sleeps up to 4</p>
+          <span>950.- DKK</span>
+</div>
+        <img src="public/images/rosenhøj-15.jpg" alt="glamping" />
+        <Button link="sv_rooms.html" text="See Room" />
+        <Line lineWidth="100%" />
+      </article>
 
-        <h3>
-          1500.- DKK
-        </h3>
-
-      </section>
-
-      <img src="public/images/bed.jpg" alt="bed">
-
-      <Line lineWidth="80%"/>
-
-      <Button link="sv_rooms.html" text="See Room"></Button>
-
-      <Line lineWidth="80%"/>
-
-      <section class="tekstboks2">
-        <h3>
-          Rosenhøj Glamping
-        </h3>
-
-        <p>
-          Sleeps up to 4
-        </p>
-
-        <h3>
-          950.- DKK
-        </h3>
-
-      </section>
-
-      <img src="public/images/rosenhøj-15.jpg" alt="glamping">
-
-      <Line lineWidth="80%"/>
-
-      <Button link="sv_rooms.html" text="See Room"></Button></Button>
-
-      <Line lineWidth="80%"/>
-
-      <section class="tekstboks3">
-        <h3>
-          Rosenhøj En - Suite Sea view with own terrace
-        </h3>
-
-        <p>
-          Sleeps up to 4
-        </p>
-
-        <h3>
-          1500.- DKK
-        </h3>
-
-      </section>
-
-      <img src="public/images/bed.jpg" alt="bed">
-
-      <Line lineWidth="80%"/>
-
-      <Button link="sv_rooms.html" text="See Room"></Button></Button>
-
-      <Line lineWidth="80%"/>
-
-      <section class="billedetekst">
-        <h3>
-          Coming Soon
-        </h3>
-        <p>
-          Available from June 2023
-        </p>
-      </section>
-
+      <article class="coming_soon">
+<div>
+          <h3>Rosenhøj En - Suite Sea view with own terrace</h3>
+          <p>Sleeps up to 4</p>
+          <span>1500.- DKK</span>
+</div>
+        <img src="public/images/bed.jpg" alt="bed"/>
+        <Button link="sv_rooms.html" text="See Room" />
+        <Line lineWidth="100%" />
+      </article>
     </main>
-    <Footer/>
   </body>
+  <Footer />
 </html>
 
 <style>
-
-main {
-      padding-top: 100px;
-      display: grid;
-      gap: 1rem;
-    }
-  h3 {
-    text-align: center;
-    margin: auto;
-    margin-top: 1rem;
-  }
-
-  p {
-    text-align: center;
-    margin: auto;
-    margin-top: 1rem;
-  }
-
-  section {
+  article {
     display: grid;
-      gap: 1rem;
+    place-items: center;
+    gap: 1rem;
+    padding-block: 1rem;
   }
+  div {
+    display: grid;
+    place-items: center;
+    gap: 1rem;
 
+  }
   img {
-    width: 100%;
-      height: auto;
+    max-width: 100%;
+  }
+  p {
+    color: var(--light_blue);
+  }
+  span {
+    font-size: 1.5rem;
+    padding-top: 1rem;
+  }
+.coming_soon img{
+  filter: brightness(60%) blur(4px);
+  pointer-events: none;
+}
+.coming_soon{
+  pointer-events: none;
+}
+.coming_soon::after{
+  content: "COMING SOON";
+  filter: unset;
+  position: absolute;
+  color: var(--custom_white);
+  font-size: clamp(1rem, 10vw, 4rem);
+  font-weight: 600;
+  translate: 0 -70px;
+}
+.coming_soon::before{
+  content: "AVAILABLE FROM JUNE 2023";
+  filter: unset;
+  position: absolute;
+  z-index: 100;
+  color: var(--custom_white);
+  font-size: clamp(1rem, 5vw, 2rem);
+  font-weight: 400;
+
+}
+  @media (min-width: 800px) {
+    div{
+      grid-template-columns: auto auto 1fr;
+      width: 100%;
+      padding-inline: 1rem;
+      place-items: unset;
+      align-items: center;
+    }
+    span{
+      margin-left: auto;
+      margin-right: 2rem;
+    }
+    img{
+      max-height: 600px;
+      width: 100%;
       object-fit: cover;
-      padding-inline: 5px;
-      max-height: 400px;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-  }
-
-  @media (min-width: 1150px) {
-    .tekstboks1 {
-      grid-template-columns: 1fr 1fr 1fr;
     }
-
-    .tekstboks2 {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-
-    .tekstboks3 {
-      grid-template-columns: 1fr 1fr 1fr;
+    h3{
+      font-size: clamp(1rem, 5vw, 1.5rem);
     }
   }
-
 </style>
 
-<script>
-    
-</script>
+<script></script>
