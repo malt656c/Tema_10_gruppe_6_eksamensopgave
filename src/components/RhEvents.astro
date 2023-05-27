@@ -1,25 +1,23 @@
 ---
-import Line from "./Line.astro";
+import LongLine from "../components/LongLine.astro";
 import SoMeIcon from "./SoMeIcons.astro";
 ---
 
 <section>
+  <LongLine />
   <h2>Rosenhøj Events</h2>
 
   <article>
-    <h3>Supperclubs</h3>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur possimus, doloribus dignissimos libero explicabo officia labore. Asperiores consequatur repudiandae commodi cumque cupiditate
-      ea, saepe harum qui sint, voluptatum delectus magni adipisci magnam reiciendis! Veritatis illo cum delectus neque ea deserunt, similique ratione doloremque placeat laudantium?
-    </p>
+    <h3>SUPPERCLUBS</h3>
+    <p>Come to our next supperclub, a unique dining concept that combines a restaurant, social gathering and entertainment. Our supperclub is the place to be for food lovers who want something extraordinary.</p>
     <div class="gallery">
       <img src="../images/SC1.png" alt="Supperclub" />
       <img src="../images/SC2.png" alt="Supperclub" />
       <img src="../images/SC3.png" alt="Supperclub" />
     </div>
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur possimus, doloribus dignissimos libero explicabo officia labore. Asperiores consequatur repudiandae commodi cumque cupiditate
-      ea, saepe harum qui sint, voluptatum delectus magni adipisci magnam reiciendis! Veritatis illo cum delectus neque ea deserunt, similique ratione doloremque placeat laudantium?
+      At our supperclub, we believe that great food is best enjoyed in the company of others. It is a place where strangers become friends, where stories are shared, and where laughter fills the air. <br /><br /> The table becomes a stage for lively conversations,
+      as guests from all walks of life engage in delightful exchanges and forge new connections that transcend cultural boundaries.
     </p>
 
     <div class="so_me">
@@ -31,19 +29,16 @@ import SoMeIcon from "./SoMeIcons.astro";
   <!-- Mellemrum -->
 
   <article>
-    <h3>Rosenhøj Julemarked</h3>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur possimus, doloribus dignissimos libero explicabo officia labore. Asperiores consequatur repudiandae commodi cumque cupiditate
-      ea, saepe harum qui sint, voluptatum delectus magni adipisci magnam reiciendis! Veritatis illo cum delectus neque ea deserunt, similique ratione doloremque placeat laudantium?
-    </p>
+    <h3>ROSENHØJ JULEMARKED</h3>
+    <p>Every year we celebrate Christmas with our deluxe Christmas market. <br /> We offer Christmas trees, wreaths & bindings, vintage, ceramics, whimsical Christmas decorations, antiques and deluxe treats for the palate!</p>
     <div class="gallery">
       <img src="../images/RJ1.png" alt="Julemarked" />
       <img src="../images/RJ2.png" alt="Julemarked" />
       <img src="../images/RJ3.png" alt="Julemarked" />
     </div>
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur possimus, doloribus dignissimos libero explicabo officia labore. Asperiores consequatur repudiandae commodi cumque cupiditate
-      ea, saepe harum qui sint, voluptatum delectus magni adipisci magnam reiciendis! Veritatis illo cum delectus neque ea deserunt, similique ratione doloremque placeat laudantium?
+      Experience the magic of the holiday season at our deluxe Christmas market in Svendborg! Indulge in festive delights, shop for unique gifts, and immerse yourself in the cozy atmosphere of our charming bed and breakfast. Join us for an amazing
+      holiday experience filled with joy, laughter, and enchantment.
     </p>
 
     <div class="so_me">
@@ -64,8 +59,8 @@ import SoMeIcon from "./SoMeIcons.astro";
   article {
     display: grid;
     place-items: center;
-    outline: 2px solid var(--custom_black);
-    padding: 1rem;
+    outline: 2px solid var(--dark_blue);
+    padding: 2rem;
     gap: 1rem;
   }
   img {
@@ -76,6 +71,7 @@ import SoMeIcon from "./SoMeIcons.astro";
     font-size: clamp(1.5rem, 8vw, 2.5rem);
     color: var(--dark_blue);
     place-items: center;
+    margin-block: 1rem;
   }
   h2::after {
     display: none;
@@ -90,10 +86,12 @@ import SoMeIcon from "./SoMeIcons.astro";
     font-size: clamp(1.2rem, 6vw, 2rem);
     display: grid;
     gap: 0.5rem;
+    margin-block: 2rem;
   }
   h3::after {
     background-color: var(--dark_blue);
   }
+
   .so_me {
     display: grid;
     place-items: center;
@@ -102,21 +100,31 @@ import SoMeIcon from "./SoMeIcons.astro";
   .gallery {
     display: grid;
     gap: 1rem;
+    margin-block: 1rem;
   }
   @media (min-width: 800px) {
+    p {
+      font-size: 1.5vw;
+      max-width: clamp(25ch, calc(100% - 2rem), 80ch);
+    }
+
+    h2,
+    h3 {
+      margin-block: 3rem;
+    }
     section {
-    gap: 2rem;
-  }
-  article{
-  gap: 2rem;
-  max-width: 1200px;
-  }
-  .gallery {
-grid-template-columns: repeat(3, 1fr);
-max-width: calc(100% - 4rem);
-  }
-  .so_me {
-    gap: 1rem;
-  }
+      gap: 2rem;
+    }
+    article {
+      gap: 2rem;
+      max-width: 1200px;
+    }
+    .gallery {
+      grid-template-columns: repeat(3, 1fr);
+      max-width: calc(100% - 4rem);
+    }
+    .so_me {
+      gap: 1rem;
+    }
   }
 </style>
