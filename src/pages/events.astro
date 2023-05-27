@@ -4,6 +4,7 @@ import Footer from "../components/Footer.astro";
 import EventsSection from "../components/EventsSection.astro";
 import RhEvents from "../components/RhEvents.astro";
 import Popup from "../components/Popup.astro";
+import PageTitle from "../components/PageTitle.astro"
 ---
 
 <html lang="da">
@@ -19,16 +20,19 @@ import Popup from "../components/Popup.astro";
   <body>
     <header>
       <NavMenu iconColor="var(--custom_black)" />
+      <PageTitle>events</PageTitle>
     </header>
     <main>
       <EventsSection />
       <RhEvents />
-      <Popup />
+<!--       <Popup /> -->
     </main>
     <Footer />
   </body>
 </html>
 
-<style></style>
+<style>
+
+</style>
 
 <script></script>

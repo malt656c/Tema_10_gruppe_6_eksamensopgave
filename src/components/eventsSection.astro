@@ -1,78 +1,76 @@
 ---
-import ContactUsButton from "./ContactUsButton.astro";
+import Button from "./Button.astro";
+import Line from "./Line.astro"
 ---
-  <section id="top">
-    <h2>Events</h2>
-    <h3>Consider hosting an event at Rosenhøj for an unforgettable experience.</h3>
-  </section>
-  <div id="grid1-1">
-    <section id="textEvents">
-      <p>With vintage-inspired surroundings and the ability to cater to up to 40 guests, we offer an ideal setting for any occasion – whether it’s a confirmation, birthday party, or company event.</p>
-      <p>Our expert chef will craft delicious menus to meet your specific preferences and dietary requirements. Whether you desire a formal dinner or a casual buffet, we can cater to your needs with high-quality cuisine and exceptional service.</p>
-    </section>
-    <img id="EventPic1" src="../images/Events2.png" alt="Events" />
-  </div>
-  <div id="grid1-1">
-    <img id="EventPic2" src="../images/Events1.png" alt="Events" />
-    <section id="textEvents">
-      <p>
-        Our dedicated team will assist you in every aspect of planning, including table settings, decor, music, and entertainment, to ensure your event is a resounding success. We pride ourselves on delivering outstanding service and attention to
-        detail, so you can relax and enjoy your special occasion.
-      </p>
-      <p>Get in touch with us today to learn more about our event packages and menu options. We’d be honored to host your next special event at Rosenhøj.</p>
-    </section>
-  </div>
-  <ContactUsButton />
 
+<section>
+  <h2>Consider hosting an event at Rosenhøj for an unforgettable experience.</h2>
+  <img src="../images/Events2.png" alt="Events" />
+  <p>
+    With vintage-inspired surroundings and the ability to cater to up to 40 guests, we offer an ideal setting for any occasion - whether it's a confirmation, birthday party, or company event. <br />
+    <br />
+    Our expert chef will craft delicious menus to meet your specific preferences and dietary requirements. Whether you desire a formal dinner or a casual buffet, we can cater to your needs with high-quality
+    cuisine and exceptional service.
+  </p>
+
+  <img src="../images/Events1.png" alt="Events" />
+
+  <p>
+    Our dedicated team will assist you in every aspect of planning, including table settings, decor, music, and entertainment, to ensure your event is a resounding success. We pride ourselves on
+    delivering outstanding service and attention to detail, so you can relax and enjoy your special occasion.
+  </p>
+  <p>Get in touch with us today to learn more about our event packages and menu options. We'd be honored to host your next special event at Rosenhøj.</p>
+</section>
+<Button text="Contact Us" link="" />
+<Line/>
 <style>
-  #top {
-    text-align: center;
-    padding-top: 8%;
-    color: #354c82;
-  }
-
-  #top h3 {
-    margin-top: 2%;
-    font-family: raleway, sans-serif;
-    font-weight: lighter;
-    font-size: 30px;
-  }
-
-  @media (min-width: 1150px) {
-    #grid1-1 {
-      margin-top: 5%;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      margin-bottom: 2%;
-    }
-  }
-
-  @media (max-width: 1150px) {
-    #grid1-1 img {
-      max-width: 100%;
-      margin-top: 5%;
-    }
-  }
-  #textEvents p {
-    font-family: raleway, sans-serif;
-    font-size: 17px;
-    font-weight: lighter;
-    line-height: 200%;
-    max-width: 65%;
+  section {
+    display: grid;
+    place-items: center;
+    gap: 1rem;
     margin: auto;
-    margin-top: 4%;
   }
-
-  #EventPic1 {
-    display: block;
-    margin-left: auto;
-    max-width: 70%;
-
+  h2 {
+    line-height: 2;
+    color: var(--dark_blue);
   }
+  h2::after {
+    display: none;
+  }
+  img {
+    width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+  }
+  @media (min-width: 800px) {
+    section {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      max-width: 1300px;
+    }
+    p{
+      max-width: 55ch;
+    }
 
-  #EventPic2 {
-    display: block;
-    margin-right: auto;
-    max-width: 80%
+    h2 {
+      grid-column: span 2;
+    }
+    img:first-of-type,
+    p:nth-of-type(2),
+    p:nth-of-type(3) {
+      grid-column: 2/3;
+    }
+    img:last-of-type,
+    p:first-of-type {
+      grid-column: 1/2;
+    }
+    img:first-of-type,
+    p:first-of-type {
+      grid-row: 2/3;
+    }
+    img:last-of-type {
+      grid-row: span 2;
+    }
   }
 </style>
