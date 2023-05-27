@@ -29,6 +29,6 @@ h2::after {
   background-color: var(--custom_black);
 }
 p {
-  max-width: clamp(25ch, calc(100% - 2rem), 65ch);
+  max-width: clamp(25ch, calc(100% - 2rem), 75ch);
   line-height: 1.5;
 }
