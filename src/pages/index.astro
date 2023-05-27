@@ -2,11 +2,13 @@
 import Hero from "../components/Hero.astro";
 import NavMenu from "../components/NavMenu.astro";
 import HouseSection from "../components/HouseSection.astro";
-import ReviewsSection from "../components/ReviewsSection.astro"
-import ForsideBilledeMenu from "../components/ForsideBilledeMenu.astro"
-import KontaktSection from "../components/KontaktSection.astro"
-import FollowUsSection from "../components/FollowUsSection.astro"
-import Footer from "../components/Footer.astro"
+import ReviewsSection from "../components/ReviewsSection.astro";
+import ForsideBilledeMenu from "../components/ForsideBilledeMenu.astro";
+import KontaktSection from "../components/KontaktSection.astro";
+import FollowUsSection from "../components/FollowUsSection.astro";
+import Footer from "../components/Footer.astro";
+import GalleriForside from "../components/GalleriForside.astro";
+import Map from "../components/Map.astro";
 ---
 
 <html lang="da">
@@ -21,19 +23,19 @@ import Footer from "../components/Footer.astro"
   </head>
   <body>
     <header>
-      <NavMenu iconColor = "var(--custom_white)"/>
+      <NavMenu iconColor="var(--custom_white)" />
       <Hero backgroundImage="url(../images/bed.jpg)" />
     </header>
     <main>
-      <HouseSection/>
-<ReviewsSection reviewSource={"guestbook"}/>
-<ForsideBilledeMenu/>
-<KontaktSection/>
-<FollowUsSection/>
+      <HouseSection />
+      <ReviewsSection reviewSource={"guestbook"} />
+      <ForsideBilledeMenu />
+      <KontaktSection />
+      <FollowUsSection />
+      <GalleriForside />
+      <Map />
     </main>
-    <Footer/>
-    <script>
-
-    </script>
+    <Footer />
+    <script></script>
   </body>
 </html>

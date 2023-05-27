@@ -1,0 +1,27 @@
+---
+---
+
+<div class="galleri">
+  <img src="../images/gallery_forside/forside1.webp" alt="" />
+  <img src="../images/gallery_forside/forside2.webp" alt="" />
+  <img src="../images/gallery_forside/forside3.webp" alt="" />
+  <img src="../images/gallery_forside/forside4.webp" alt="" />
+  <img src="../images/gallery_forside/forside5.webp" alt="" />
+  <img src="../images/gallery_forside/forside6.webp" alt="" />
+</div>
+
+<style>
+  img {
+    width: 20vw;
+    height: 20vw;
+    object-fit: cover;
+  }
+  .galleri {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 20vw);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2vw;
+    margin-bottom: 5rem;
+  }
+</style>
