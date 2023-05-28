@@ -19,21 +19,23 @@ import Button from "../components/Button.astro";
   <body>
     <header>
       <NavMenu iconColor="var(--custom_black)" />
-      <PageTitle>Rosenhøj - Suite Gardenview</PageTitle>
+      <h3>Rosenhøj En-Suite Gardenview</h3>
+      <h4>Sleeps up to 4</h4>
     </header>
     <main>
       <section>
-        <p>Sleeps up to 4</p>
-        <h3>1500.- DKK</h3>
+        <div class="price">
+          <span>1500.- DKK</span>
+        </div>
         <img src="public/images/bed.jpg" alt="bed" />
         <p>
-          Newly refurnished bedroom with King Size bed, including a single daybed in the corner of the bedroom, perfect for small family's up to 4. Your own private living room with fireplace and
-          bathroom. Television with premium channels. Coffee and tea making station. This is a home away from home.
+          Newly refurnished bedroom with King Size bed, including a single daybed in the corner of the bedroom, perfect for small family's up to 4. Your own private living room with fireplace and bathroom. Television with premium channels. Coffee and
+          tea making station. This is a home away from home.
         </p>
       </section>
 
       <Line lineWidth="90%" />
-      <section>
+      <section class="information_section">
         <ul class="Information">
           <li>King Size Bed.</li>
           <li>Newly refurnished.</li>
@@ -47,48 +49,81 @@ import Button from "../components/Button.astro";
           <li>Homemade continental breakfast.</li>
         </ul>
 
-        <img src="public/images/plantegning.svg" alt="Room" />
+        <img class="room_drawing" src="public/images/room-topview.webp" alt="Room" />
       </section>
       <Line lineWidth="90%" />
-      <Button text="Book Room" />
+      <Button text="BOOK ROOM" />
       <Line lineWidth="90%" />
     </main>
     <Footer />
   </body>
 
   <style>
-section{
-display: grid;
-gap: 2rem;
-place-items: center;
-padding-block: 1rem;
-}
+    h3 {
+      color: var(--dark_blue);
+      font-size: clamp(1.5rem, 8vw, 4rem);
+      text-align: center;
+      padding-inline: 1rem;
+      display: grid;
+      padding-top: 150px;
+      gap: 0.5rem;
+    }
+    h4 {
+      text-align: center;
+      color: var(--light_blue);
+      font-size: 1.5rem;
+      padding-block: 2vw;
+    }
+    section {
+      display: grid;
+      gap: 2rem;
+      place-items: center;
+      padding-block: 1rem;
+    }
     img {
       width: 100%;
       object-fit: cover;
     }
-    img[alt="Room"]{
+    img[alt="Room"] {
       padding: 2rem;
     }
-    ul{
+    ul {
       line-height: 2rem;
     }
-    p{
+    p {
       line-height: 1.75rem;
+      margin-block: 2rem;
     }
+    .room_drawing {
+      max-width: 400px;
+    }
+    .information_section {
+      padding: 4rem;
+    }
+    @media (min-width: 1000px) {
+      .price {
+        position: absolute;
+        left: 85vw;
+        top: 35vh;
+      }
+      span {
+        font-size: 1.5rem;
+      }
+      img {
+        max-height: 600px;
+      }
+      img[alt="Room"] {
+        object-fit: contain;
+        max-height: 500px;
+      }
+    }
+
     @media (min-width: 800px) {
-section:nth-of-type(2){
-  grid-template-columns: repeat(2, 1fr);
-  max-width: 1200px;
-  margin: auto;
-}
-img{
-  max-height: 600px;
-}
-img[alt="Room"]{
-     object-fit: contain;
-     max-height: 400px;
-    }
+      section:nth-of-type(2) {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 1200px;
+        margin: auto;
+      }
     }
   </style>
 
