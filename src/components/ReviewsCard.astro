@@ -1,9 +1,9 @@
 ---
-const {Text, Navn, Stars} = Astro.props;
+const {Text, Navn, Stars, reviewType} = Astro.props;
 
 ---
 
-<article>
+<article class={reviewType}>
   <span class="stars">{Stars}</span>
   <p>
    {Text}

@@ -1,0 +1,31 @@
+---
+import ReviewsCard from "./ReviewsCard.astro";
+
+const { reviewSource } = Astro.props;
+const apiUrl = "https://znpuvpweojnqtmfuiiqr.supabase.co/rest/v1/" + reviewSource + "?approval=is.true";
+const apiKey =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpucHV2cHdlb2pucXRtZnVpaXFyIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQ5MjIxNzgsImV4cCI6MjAwMDQ5ODE3OH0.1r8u1kfw4xPxzwjf46FeUeGkL_5P9MWRzr5DdtsHNKs";
+
+const response = await fetch(apiUrl, {
+  method: "GET",
+  headers: {
+    apikey: apiKey,
+    Accept: "application/json",
+    "Content-Type": "application/json",
+  }});
+const review = await response.json();
+---
+
+<div id={"reviewContent_" + reviewSource}>
+    {
+      review?.map((test) => {
+        return <ReviewsCard Navn={test.reviewNavn} Stars={test?.reviewStars} Text={test.reviewText} reviewType={reviewSource} />;
+      })
+    }
+  </div>
+
+<style>
+ 
+</style>
+
+

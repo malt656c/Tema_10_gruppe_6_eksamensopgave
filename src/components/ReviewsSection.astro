@@ -1,37 +1,21 @@
 ---
 import Line from "../components/Line.astro";
 import GuestbookForm from "./GuestbookForm.astro";
-import ReviewsCard from "./ReviewsCard.astro";
-let { reviewSource } = Astro.props;
-const apiUrl = "https://znpuvpweojnqtmfuiiqr.supabase.co/rest/v1/guestbook?approval=is.true";
-const apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpucHV2cHdlb2pucXRtZnVpaXFyIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQ5MjIxNzgsImV4cCI6MjAwMDQ5ODE3OH0.1r8u1kfw4xPxzwjf46FeUeGkL_5P9MWRzr5DdtsHNKs";
 
-const response = await fetch(apiUrl, {
-  method: "GET",
-  headers: {
-    apikey: apiKey,
-    Accept: "application/json",
-    "Content-Type": "application/json",
-  },
-});
-const review = await response.json();
+import ReviewsBox from "./ReviewsBox.astro";
 ---
 
 <section>
   <h2>Reviews</h2>
-
   <div id="ReviewsBox">
     <div id="LeftArrow">
       <svg width="10" height="26" viewBox="0 0 10 26" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M9 25L1 13.2293L9 1" stroke="black"></path>
       </svg>
     </div>
-    <div id="reviewContent">
-      {
-        review?.map((test) => {
-          return <ReviewsCard Navn={test.reviewNavn} Stars={test?.reviewStars} Text={test.reviewText} />;
-        })
-      }
+    <div>
+      <ReviewsBox reviewSource="google_reviews" />
+      <ReviewsBox reviewSource="guestbook" />
     </div>
     <div id="RightArrow">
       <svg width="10" height="26" viewBox="0 0 10 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -40,11 +24,11 @@ const review = await response.json();
     </div>
   </div>
 
-  <GuestbookForm />
   <div class="reviews_buttons_box">
-    <a href="">google reviews</a>
-    <a href="">Guestbook</a>
+    <div class="google_reviews">google reviews</div>
+    <div class="guestbook">Guestbook</div>
   </div>
+  <GuestbookForm />
 </section>
 
 <style>
@@ -68,12 +52,9 @@ const review = await response.json();
     width: 100%;
     padding: 2rem;
     gap: 1.5rem;
-    padding-block: 1rem;
-    /*  margin-top: 4rem; */
-    /*  background-color: var(--light_blue); */
     padding-block: 2rem;
   }
-  .reviews_buttons_box a {
+  .reviews_buttons_box div {
     color: var(--light_blue);
     border-style: double;
 
@@ -86,7 +67,9 @@ const review = await response.json();
     max-width: 250px;
     text-align: center;
   }
-
+  .vanish {
+    display: none;
+  }
   @media (min-width: 1150px) {
     #ReviewsBox {
       width: fit-content;
@@ -95,10 +78,10 @@ const review = await response.json();
       grid-template-columns: repeat(2, auto);
       justify-content: center;
     }
-    .reviews_buttons_box a {
+    .reviews_buttons_box div {
       transition: all 0.3s ease-in-out;
     }
-    .reviews_buttons_box a:hover {
+    .reviews_buttons_box div:hover {
       background-color: var(--dark_blue);
       color: var(--custom_white);
     }
@@ -114,10 +97,33 @@ const review = await response.json();
     }
   }
 </style>
-
 <script>
+  /* Databasevalg */
+  let reviewDatabase = "google_reviews";
+  document.getElementById("reviewContent_guestbook").style.display = "none";
+  const buttons = document.querySelector(".reviews_buttons_box").childNodes;
+
+
+  buttons.forEach((button) => button.addEventListener("mousedown", pickDatabase));
+
+  function pickDatabase() {
+
+    reviewDatabase = this.classList[0];
+
+    reviewContent = document.getElementById("reviewContent_" + reviewDatabase);
+
+    if (this.classList.contains("google_reviews")) {
+      document.getElementById("reviewContent_guestbook").style.display = "none";
+      document.getElementById("reviewContent_google_reviews").style.display = "grid";
+    } else if (this.classList.contains("guestbook")) {
+      document.getElementById("reviewContent_google_reviews").style.display = "none";
+      document.getElementById("reviewContent_guestbook").style.display = "grid";
+    }
+  }
+  /* Databasevalg */
+  /* reviewScroll */
   let currentView = 0;
-  const reviewContent = document.getElementById("reviewContent");
+  let reviewContent = document.getElementById("reviewContent_" + reviewDatabase);
 
   const rightArrow = document.getElementById("RightArrow");
 
@@ -139,7 +145,6 @@ const review = await response.json();
     }
     currentReview();
   }
-
   function currentReview() {
     for (let i = 0; i < reviewContent.children.length; i++) {
       if (reviewContent.children[i] != reviewContent.children[currentView]) {
@@ -150,4 +155,5 @@ const review = await response.json();
     }
   }
   currentReview();
+  /* reviewScroll */
 </script>
