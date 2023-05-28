@@ -27,14 +27,10 @@ import Line from "../components/Line.astro";
     The Food and Wine Festival indulges taste buds with a delectable array of flavors and aromas. Svendborg's festivals merge music, culture, sport, and food to create an unforgettable experience.
     From melodic concerts to artistic showcases, athletic competitions to culinary delights, the town's festivals have something for everyone. Immerse yourself in Svendborg's vibrant celebrations and
     discover the magic they offer.
-
-    <Line lineWidth="80%" />
-
-    <h3>Read more about festivals in Svendborg and dates here</h3>
-    <div>
-      <a href="https://www.visitsvendborg.dk/svendborg/festivaler-i-svendborg">READ MORE</a>
-    </div>
   </p>
+  <!--     <Line lineWidth="80%" /> -->
+  <h3>Read more about festivals in Svendborg and dates here</h3>
+  <a href="https://www.visitsvendborg.dk/svendborg/festivaler-i-svendborg">READ MORE</a>
 </section>
 
 <section id="activities">
@@ -56,12 +52,9 @@ import Line from "../components/Line.astro";
     With its diverse natural offerings, Svendborg captivates visitors with its coastal beauty, verdant forests, picturesque islands, and serene parks, making it an ideal destination for those seeking
     a connection with nature. Nestled on the coast, Svendborg offers breathtaking views of the sea, with tranquil beaches perfect for sunbathing, picnicking, and leisurely walks along the shoreline.
   </p>
-
+  <p>The town is surrounded by lush forests and rolling hills, providing numerous hiking and biking trails that showcase the area's natural beauty, allowing visitors to explore at their own pace.</p>
   <div>
     <img src="../images/island.jpg" alt="image of Svendborg islands" />
-    <p>
-      The town is surrounded by lush forests and rolling hills, providing numerous hiking and biking trails that showcase the area's natural beauty, allowing visitors to explore at their own pace.
-    </p>
     <img src="../images/nature.jpg" alt="" />
   </div>
 
@@ -105,11 +98,14 @@ import Line from "../components/Line.astro";
   }
   h3 {
     text-align: center;
+    display: grid;
+    place-items: center;
+    gap: 1rem;
   }
   /*  BODY TEXT */
   p {
     font-weight: 300;
-    line-height: 200%;
+    line-height: 2rem;
     padding-inline: 1rem;
   }
   /* IMAGES */
@@ -121,7 +117,7 @@ import Line from "../components/Line.astro";
   /* LINKS */
   a {
     outline: 5px double var(--custom_white);
-    color: white;
+    color: var(--custom_white);
     text-decoration: none;
     font-weight: 300;
     font-size: clamp(1rem, 3vw, 2rem);
@@ -137,6 +133,7 @@ import Line from "../components/Line.astro";
     transform: translateX(-50%) translateY(-50%);
     background-color: #354c8299;
     backdrop-filter: blur(1px);
+    width: max-content;
   }
   /* GENERAL LAYOUT */
   div {
@@ -145,26 +142,33 @@ import Line from "../components/Line.astro";
     gap: 1rem;
   }
   section:is(:nth-of-type(2), :nth-of-type(4)),
-  section:is(:nth-of-type(2), :nth-of-type(4)) > h2 {
+  section:is(:nth-of-type(2), :nth-of-type(4)) h2 {
     background-color: var(--light_blue);
     color: var(--custom_white);
   }
   section:is(:nth-of-type(2), :nth-of-type(4)) > h2::after {
     background-color: var(--custom_white);
   }
-  section:is(:nth-of-type(2), :nth-of-type(4)) img {
-    outline: 6px double var(--custom_white);
-    margin-block: 1rem;
-    border-radius: 3px;
-    filter: drop-shadow(2px 4px 6px #00000077);
-  }
-  section:nth-of-type(4) img{
+  section:nth-of-type(4) img {
     object-position: bottom;
   }
-  @media (min-width: 600px) {
-    section:nth-of-type(2) img{
-    object-position: 0 -15rem;
+  section:nth-of-type(4) div {
+    width: 100%;
   }
+  section:nth-of-type(2) h3::after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: var(--custom_white);
+  }
+  @media (min-width: 800px) {
+    section:nth-of-type(4) div,
+    section:first-of-type {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    section:first-of-type h2 {
+      grid-column: span 2;
+    }
   }
   @media (min-width: 1200px) {
   }
