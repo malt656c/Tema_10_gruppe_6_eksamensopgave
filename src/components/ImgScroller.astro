@@ -1,4 +1,5 @@
 ---
+const {imageHeight, scrollerWidth} = Astro.props;
 ---
 
 <section>
@@ -8,27 +9,7 @@
     </svg>
   </div>
   <div id="slider-container" class="slider">
-    <div class="slide">
-      <img src="../images/menu/image1.jpeg" alt="" />
-    </div>
-    <div class="slide">
-      <img src="../images/menu/image2.jpeg" alt="" />
-    </div>
-    <div class="slide">
-      <img src="../images/menu/image3.jpeg" alt="" />
-    </div>
-    <div class="slide">
-      <img src="../images/menu/image4.jpeg" alt="" />
-    </div>
-    <div class="slide">
-      <img src="../images/menu/image5.jpeg" alt="" />
-    </div>
-    <div class="slide">
-      <img src="../images/menu/image6.jpeg" alt="" />
-    </div>
-    <div class="slide">
-      <img src="../images/menu/image7.jpeg" alt="" />
-    </div>
+<slot/>
   </div>
   <div id="RightArrow">
     <svg width="10" height="26" viewBox="0 0 10 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -37,30 +18,53 @@
   </div>
 </section>
 
-<style>
+<style define:vars={{imageHeight, scrollerWidth}}>
   section {
-    padding-inline: 1.5em;
+    width:100%;
+    max-width:100vw;
     display: flex;
     gap: 1rem;
     align-items: center;
+    margin:auto;
     margin-top: 3rem;
+    position: relative;
   }
   #slider-container {
     display: flex;
+    width:100%;
     gap: 1rem;
     position: relative;
-    padding-inline: 1.5rem;
-    height: 350px;
+    height: var(--imageHeight);
     overflow-x: scroll;
     overflow-y: hidden;
     scroll-behavior: smooth;
     scroll-snap-align: center;
   }
-
-  img {
-    height: 100%;
-    width: 250px;
-    object-fit: cover;
+  #RightArrow, #LeftArrow{
+    position:absolute;
+    z-index:100;
+    display:grid;
+    place-items:center;
+    background-color: #354c8299;
+    backdrop-filter: blur(3px);
+    height:40px;
+    aspect-ratio:1;
+    border-radius:50%;
+  }
+  #LeftArrow{
+    left: 1rem;
+  }
+  #RightArrow{
+    right: 1rem;
+  }
+  path{
+    stroke:white;
+    stroke-width: 2px;
+  }
+  @media(min-width:1000px){
+    section{
+      max-width:var(--scrollerWidth);
+    }
   }
 </style>
 
@@ -93,7 +97,7 @@
     if (currentImage < 0) {
     } else if (currentImage > imageSlider.children.length) {
     } else {
-      imageSlider.scroll({ left: 266 * currentImage, behavior: "smooth" });
+      imageSlider.scroll({ left: (imageSlider.children[0].offsetWidth + 16) * currentImage, behavior: "smooth" });
     }
   }
 </script>

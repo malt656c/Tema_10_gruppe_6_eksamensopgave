@@ -4,6 +4,9 @@ import Footer from "../components/Footer.astro";
 import Line from "../components/Line.astro";
 import PageTitle from "../components/PageTitle.astro";
 import Button from "../components/Button.astro";
+import ImgScrollerItem from "../components/ImgScrollerItem.astro";
+import ImgScroller from "../components/ImgScroller.astro";
+const scrollerImageWidth = "calc(100vw)";
 ---
 
 <html lang="da">
@@ -27,7 +30,16 @@ import Button from "../components/Button.astro";
         <div class="price">
           <span>1500.- DKK</span>
         </div>
-        <img src="public/images/bed.jpg" alt="bed" />
+        <ImgScroller imageHeight="500px" scrollerWidth={scrollerImageWidth}>
+          <ImgScrollerItem imageSource="public/images/rosenhøj-05.jpg" imageWidth={scrollerImageWidth}/>
+          <ImgScrollerItem imageSource="public/images/rosenhøj-06.jpg" imageWidth={scrollerImageWidth}/>
+          <ImgScrollerItem imageSource="public/images/rosenhøj-07.jpg" imageWidth={scrollerImageWidth}/>
+          <ImgScrollerItem imageSource="public/images/rosenhøj-08.jpg" imageWidth={scrollerImageWidth}/>
+          <ImgScrollerItem imageSource="public/images/rosenhøj-09.jpg" imageWidth={scrollerImageWidth}/>
+          <ImgScrollerItem imageSource="public/images/rosenhøj-10.jpg" imageWidth={scrollerImageWidth}/>
+          <ImgScrollerItem imageSource="public/images/rosenhøj-11.jpg" imageWidth={scrollerImageWidth}/>
+          <ImgScrollerItem imageSource="public/images/rosenhøj-12.jpg" imageWidth={scrollerImageWidth}/>
+        </ImgScroller>
         <p>
           Newly refurnished bedroom with King Size bed, including a single daybed in the corner of the bedroom, perfect for small family's up to 4. Your own private living room with fireplace and bathroom. Television with premium channels. Coffee and
           tea making station. This is a home away from home.
@@ -59,6 +71,7 @@ import Button from "../components/Button.astro";
   </body>
 
   <style>
+
     h3 {
       color: var(--dark_blue);
       font-size: clamp(1.5rem, 8vw, 4rem);
@@ -79,6 +92,7 @@ import Button from "../components/Button.astro";
       gap: 2rem;
       place-items: center;
       padding-block: 1rem;
+      max-width:100vw;
     }
     img {
       width: 100%;

@@ -1,0 +1,15 @@
+---
+const { imageSource, imageWidth } = Astro.props;
+---
+
+<div>
+  <img src={ imageSource } alt="" />
+</div>
+
+<style define:vars={{imageWidth}}>
+  img {
+    height: 100%;
+    width: var(--imageWidth);
+    object-fit: cover;
+  }
+</style>
