@@ -29,29 +29,38 @@ import Button from "../components/Button.astro";
           <p>Sleeps up to 4</p>
           <span>1500.- DKK</span>
         </div>
-        <img src="public/images/bed.jpg" alt="bed" />
+<center>
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/rnh6QUQalvU?version=3&loop=1&playlist=rnh6QUQalvU&autoplay=1&mute=1&controls=0&showinfo=0" frameborder="0";
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
+            allowfullscreen></iframe>
+</center>
+<!--         <img src="public/images/bed.jpg" alt="bed" /> -->
         <Button link="sv_rooms.html" text="See Room" />
         <Line lineWidth="100%" />
       </article>
 
       <article>
-<div>
+        <div>
           <h3>Rosenhøj Glamping</h3>
           <p>Sleeps up to 4</p>
           <span>950.- DKK</span>
-</div>
+        </div>
         <img src="public/images/rosenhøj-15.jpg" alt="glamping" />
         <Button link="sv_rooms.html" text="See Room" />
         <Line lineWidth="100%" />
       </article>
 
       <article class="coming_soon">
-<div>
+        <div>
           <h3>Rosenhøj En - Suite Sea view with own terrace</h3>
           <p>Sleeps up to 4</p>
           <span>1500.- DKK</span>
-</div>
-        <img src="public/images/bed.jpg" alt="bed"/>
+        </div>
+        <img src="public/images/bed.jpg" alt="bed" />
         <Button link="sv_rooms.html" text="See Room" />
         <Line lineWidth="100%" />
       </article>
@@ -67,11 +76,20 @@ import Button from "../components/Button.astro";
     gap: 1rem;
     padding-block: 1rem;
   }
+  iframe{
+      width: 100%;
+      max-width: 900px;
+     aspect-ratio: 16/9;
+    }
+    center{
+width: 100%;
+display: grid;
+place-items: center;
+    }
   div {
     display: grid;
     place-items: center;
     gap: 1rem;
-
   }
   img {
     max-width: 100%;
@@ -83,50 +101,49 @@ import Button from "../components/Button.astro";
     font-size: 1.5rem;
     padding-top: 1rem;
   }
-.coming_soon img{
-  filter: brightness(60%) blur(4px);
-  pointer-events: none;
-}
-.coming_soon{
-  pointer-events: none;
-}
-.coming_soon::after{
-  content: "COMING SOON";
-  filter: unset;
-  position: absolute;
-  color: var(--custom_white);
-  font-size: clamp(1rem, 10vw, 4rem);
-  font-weight: 600;
-  translate: 0 -70px;
-}
-.coming_soon::before{
-  content: "AVAILABLE FROM JUNE 2023";
-  filter: unset;
-  position: absolute;
-  z-index: 100;
-  color: var(--custom_white);
-  font-size: clamp(1rem, 5vw, 2rem);
-  font-weight: 400;
-
-}
+  .coming_soon img {
+    filter: brightness(60%) blur(4px);
+    pointer-events: none;
+  }
+  .coming_soon {
+    pointer-events: none;
+  }
+  .coming_soon::after {
+    content: "COMING SOON";
+    filter: unset;
+    position: absolute;
+    color: var(--custom_white);
+    font-size: clamp(1rem, 10vw, 4rem);
+    font-weight: 600;
+    translate: 0 -70px;
+  }
+  .coming_soon::before {
+    content: "AVAILABLE FROM JUNE 2023";
+    filter: unset;
+    position: absolute;
+    z-index: 100;
+    color: var(--custom_white);
+    font-size: clamp(1rem, 5vw, 2rem);
+    font-weight: 400;
+  }
   @media (min-width: 800px) {
-    div{
+    div {
       grid-template-columns: auto auto 1fr;
       width: 100%;
       padding-inline: 1rem;
       place-items: unset;
       align-items: center;
     }
-    span{
+    span {
       margin-left: auto;
       margin-right: 2rem;
     }
-    img{
+    img {
       max-height: 600px;
       width: 100%;
       object-fit: cover;
     }
-    h3{
+    h3 {
       font-size: clamp(1rem, 5vw, 1.5rem);
     }
   }
