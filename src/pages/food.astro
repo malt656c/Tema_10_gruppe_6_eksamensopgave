@@ -5,7 +5,7 @@ import MenuHeader from "../components/MenuHeader.astro";
 import Line from "../components/Line.astro";
 import ImgScrollerItem from "../components/ImgScrollerItem.astro";
 import ImgScroller from "../components/ImgScroller.astro";
-import ContactUsButton from "../components/ContactUsButton.astro";
+import Button from "../components/Button.astro";
 import MenuKort from "../components/MenuKort.astro";
 const scrollerImageWidth = "300px";
 ---
@@ -38,22 +38,19 @@ const scrollerImageWidth = "300px";
 <ImgScrollerItem imageSource="../images/menu/image7.jpeg" imageWidth={scrollerImageWidth}/>
     </ImgScroller>
     <p>
-      At Rosenhøj, we pride ourselves on offering fresh, seasonal cuisine that reflects the finest local produce. Our menus change daily to feature the freshest meats, fish, and vegetables available
-      that day.
+      På Rosenhøj er vi stolte af at tilbyde frisk, sæsonbetonet madlavning, der afspejler de fineste lokale råvarer. Vores menuer ændrer sig dagligt for at præsentere det friskeste kød, fisk og grøntsager, der er tilgængelige den pågældende dag.
     </p>
     <Line lineWidth="80%" />
     <p>
-      Located in Svendborg, we are surrounded by some of the best fishing waters in Europe, ensuring that our fish is always fresh and abundant. We even smoke our own meats and fish, creating an
-      unforgettable flavour experience for our guests. <br />
-      <br />Join us for lunch or dinner any night during your stay, and inquire about our seasonal offerings and pricing. We are committed to providing a culinary experience that delights the senses
-      and leaves a lasting impression.
+      Beliggende i Svendborg er vi omgivet af nogle af Europas bedste fiskevande, hvilket sikrer, at vores fisk altid er frisk og rigelig. Vi ryger endda vores eget kød og fisk, hvilket skaber en uforglemmelig smagsoplevelse for vores gæster. <br />
+      <br />Deltag i os til frokost eller middag på ethvert tidspunkt under dit ophold, og spørg os om vores sæsonbetonede tilbud og priser. Vi er forpligtede til at give en kulinarisk oplevelse, der glæder sanserne og efterlader et varigt indtryk.
     </p>
     <Line lineWidth="80%" />
-    <h3>BELOW IS A SUGGESTION TO WHAT WE COULD SERVE DURING YOUR STAY AT ROSENHØJ</h3>
+    <h3>NEDENFOR ER ET FORSLAG TIL HVAD VI KUNNE SERVERE UNDER DIT OPHOLD PÅ ROSENHØJ</h3>
     <div class="menu">
       <MenuKort />
-      <h3>IF YOU ARE INTERESTED IN FOOD OUT OF THE HOUSE, PLEASE CONTACT US</h3>
-      <ContactUsButton />
+      <h3>KONTAKT OS HVIS DU ER INTERESSERET I MAD UD AF HUSET!</h3>
+      <Button text="KONTAKT OS" link="index.html"/>
       <img src="../images/menu/image8.jpeg" alt="" />
     </div>
     <Footer />
