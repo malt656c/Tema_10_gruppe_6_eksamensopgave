@@ -14,7 +14,7 @@ import Line from "../components/Line.astro";
     <a href="https://www.visitsvendborg.dk/svendborg/faergeruter-fra-svendborg-havn">SEE FERRY ROUTES</a>
   </div>
 </section>
-
+<Line lineWidth="90%" lineColor="var(--custom_black)" />
 <section id="festivals">
   <h2>FESTIVALS</h2>
   <p>
@@ -28,11 +28,10 @@ import Line from "../components/Line.astro";
     From melodic concerts to artistic showcases, athletic competitions to culinary delights, the town's festivals have something for everyone. Immerse yourself in Svendborg's vibrant celebrations and
     discover the magic they offer.
   </p>
-  <!--     <Line lineWidth="80%" /> -->
   <h3>Read more about festivals in Svendborg and dates here</h3>
   <a href="https://www.visitsvendborg.dk/svendborg/festivaler-i-svendborg">READ MORE</a>
 </section>
-
+<Line lineWidth="90%" lineColor="var(--custom_black)" />
 <section id="activities">
   <h2>ACTIVITIES</h2>
   <p>
@@ -45,7 +44,7 @@ import Line from "../components/Line.astro";
     wind conditions make it a haven for wind and kite surfers, who can take advantage of the open waters and exhilarating waves.
   </p>
 </section>
-
+<Line lineWidth="90%" lineColor="var(--custom_black)" />
 <section id="nature">
   <h2>NATURE</h2>
   <p>
@@ -67,7 +66,7 @@ import Line from "../components/Line.astro";
     recreational pursuits.
   </p>
 </section>
-
+<Line lineWidth="90%" lineColor="var(--custom_black)" />
 <section id="music">
   <h2>ART & MUSIC</h2>
   <p>
@@ -92,9 +91,8 @@ import Line from "../components/Line.astro";
   }
   /* HEADINGS  */
   h2 {
-    width: 100%;
-    padding-inline: 10%;
     font-size: clamp(1rem, 7vw, 2rem);
+    padding-block: 1rem;
   }
   h3 {
     text-align: center;
@@ -116,8 +114,8 @@ import Line from "../components/Line.astro";
   }
   /* LINKS */
   a {
-    outline: 5px double var(--custom_white);
-    color: var(--custom_white);
+    outline: 5px double var(--custom_black);
+    color: var(--custom_black);
     text-decoration: none;
     font-weight: 300;
     font-size: clamp(1rem, 3vw, 2rem);
@@ -134,6 +132,8 @@ import Line from "../components/Line.astro";
     background-color: #354c8299;
     backdrop-filter: blur(1px);
     width: max-content;
+    color: var(--custom_white);
+    outline: 5px double var(--custom_white);
   }
   /* GENERAL LAYOUT */
   div {
@@ -141,33 +141,52 @@ import Line from "../components/Line.astro";
     place-items: center;
     gap: 1rem;
   }
-  section:is(:nth-of-type(2), :nth-of-type(4)),
-  section:is(:nth-of-type(2), :nth-of-type(4)) h2 {
-    background-color: var(--light_blue);
-    color: var(--custom_white);
-  }
-  section:is(:nth-of-type(2), :nth-of-type(4)) > h2::after {
-    background-color: var(--custom_white);
-  }
   section:nth-of-type(4) img {
     object-position: bottom;
   }
   section:nth-of-type(4) div {
     width: 100%;
   }
-  section:nth-of-type(2) h3::after {
-    content: "";
-    width: 100%;
-    height: 2px;
-    background-color: var(--custom_white);
-  }
+
   @media (min-width: 800px) {
-    section:nth-of-type(4) div,
-    section:first-of-type {
+    section {
       grid-template-columns: repeat(2, 1fr);
+      padding-block: 3rem;
+      padding-inline: 2rem;
+      max-width: 1400px;
+      margin:auto;
     }
-    section:first-of-type h2 {
+    img {
+      grid-row: span 2;
+      max-width: 75ch;
+      min-width: 80%;
+    }
+    h2 {
       grid-column: span 2;
+    }
+    /* festivals section */
+    section:nth-of-type(2) a,
+    section:nth-of-type(2) h3 {
+      grid-column: span 2;
+      padding-block: 1rem;
+    }
+    section:nth-of-type(2) img {
+      grid-row: 2/4;
+      grid-column: 1/2;
+      object-position: 0 -200px;
+    }
+    section:nth-of-type(2) p {
+      grid-column: 2/3;
+    }
+    /* festivals section */
+    section:nth-of-type(4) div {
+      grid-row: 2/6;
+      grid-column: 1/2;
+      max-width: 75ch;
+      max-height: 100%;
+    }
+    section:nth-of-type(4) img {
+      max-height: 300px;
     }
   }
   @media (min-width: 1200px) {
