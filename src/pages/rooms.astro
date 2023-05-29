@@ -29,16 +29,19 @@ import Button from "../components/Button.astro";
           <p>Sleeps up to 4</p>
           <span>1500.- DKK</span>
         </div>
-<center>
+        <video src="video/room_video.webm" autoplay="true" loop="true" mute="true"></video>
+        <!--         <center>
           <iframe
             width="100%"
             height="100%"
-            src="https://www.youtube.com/embed/rnh6QUQalvU?version=3&loop=1&playlist=rnh6QUQalvU&autoplay=1&mute=1&controls=0&showinfo=0" frameborder="0";
+            src="https://www.youtube.com/embed/rnh6QUQalvU?version=3&loop=1&playlist=rnh6QUQalvU&autoplay=1&mute=1&controls=0&showinfo=0"
+            frameborder="0"
+            ;
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
             allowfullscreen></iframe>
-</center>
-<!--         <img src="public/images/bed.jpg" alt="bed" /> -->
+        </center> -->
+        <!--         <img src="public/images/bed.jpg" alt="bed" /> -->
         <Button link="sv_rooms.html" text="SEE ROOM" />
         <Line lineWidth="100%" />
       </article>
@@ -76,26 +79,26 @@ import Button from "../components/Button.astro";
     gap: 1rem;
     padding-block: 1rem;
   }
-  iframe{
-      width: 100%;
-      max-width: 900px;
-     aspect-ratio: 16/9;
-    }
-    center{
-width: 100%;
-display: grid;
-place-items: center;
-    }
+  video {
+    width: 100%;
+    max-height: 600px;
+    object-fit: cover;
+    filter: contrast(90%) saturate(80%);
+  }
   div {
     display: grid;
     place-items: center;
     gap: 1rem;
   }
-  img {
+  img,
+  video {
     max-width: 100%;
   }
   p {
     color: var(--light_blue);
+  }
+  h3{
+    text-align:center;
   }
   span {
     font-size: 1.5rem;
@@ -104,9 +107,16 @@ place-items: center;
   .coming_soon img {
     filter: brightness(60%) blur(4px);
     pointer-events: none;
+    z-index: -1;
   }
   .coming_soon {
     pointer-events: none;
+  }
+  .coming_soon div {
+    position: relative;
+    top: 1rem;
+    padding-bottom: 1rem;
+    background-color: white;
   }
   .coming_soon::after {
     content: "COMING SOON";

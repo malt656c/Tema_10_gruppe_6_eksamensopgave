@@ -4,8 +4,8 @@ import SvbIcons from "../components/SvbIcons.astro";
 
 <div class="content">
   <article>
-    <video autoplay muted loop id="video">
-      <source src="../video/om_svb_video.mp4" type="video/mp4" />
+    <video autoplay muted loop>
+      <source src="../video/om_svb_video.webm" type="video/mp4" />
     </video>
     <h1>SVENDBORG</h1>
   </article>
@@ -19,16 +19,19 @@ import SvbIcons from "../components/SvbIcons.astro";
     display: grid;
     place-items: center;
   }
-  #video {
+  video {
     width: 100%;
     min-height: 150px;
     max-height: 400px;
     object-fit: cover;
   }
 
-  .content {
+  div {
     color: #f1f1f1;
     padding-top: 8rem;
+    padding-bottom:4rem;
+    display: grid;
+gap: 1rem;
   }
 
   h1 {
@@ -38,5 +41,11 @@ import SvbIcons from "../components/SvbIcons.astro";
     display: grid;
     place-items: center;
     backdrop-filter: brightness(80%);
+  }
+  @media(min-width:800px){
+    div{
+      gap: 6rem;
+      padding-bottom:6rem;
+    }
   }
 </style>
