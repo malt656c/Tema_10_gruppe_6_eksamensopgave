@@ -2,7 +2,6 @@
 import NavMenu from "../components/NavMenu.astro";
 import Footer from "../components/Footer.astro";
 import Line from "../components/Line.astro";
-import PageTitle from "../components/PageTitle.astro";
 import Button from "../components/Button.astro";
 import ImgScrollerItem from "../components/ImgScrollerItem.astro";
 import ImgScroller from "../components/ImgScroller.astro";
@@ -17,7 +16,7 @@ const scrollerImageWidth = "100vw";
     <meta name="generator" content={Astro.generator} />
     <link rel="stylesheet" href="https://use.typekit.net/xcg1awn.css" />
     <link rel="stylesheet" href="../../public/styles/global.css" />
-    <title>Rosenhøj Bed & Breakfast</title>
+    <title>Rosenhøj En-Suite Haveudsigt</title>
   </head>
   <body>
     <header>
@@ -31,22 +30,22 @@ const scrollerImageWidth = "100vw";
           <span>1500.- DKK</span>
         </div>
         <ImgScroller imageHeight="500px" scrollerWidth={scrollerImageWidth}>
-          <ImgScrollerItem imageSource="public/images/rosenhøj-05.webp" imageWidth={scrollerImageWidth}/>
-          <ImgScrollerItem imageSource="public/images/rosenhøj-06.webp" imageWidth={scrollerImageWidth}/>
-          <ImgScrollerItem imageSource="public/images/rosenhøj-07.webp" imageWidth={scrollerImageWidth}/>
-          <ImgScrollerItem imageSource="public/images/rosenhøj-08.webp" imageWidth={scrollerImageWidth}/>
-          <ImgScrollerItem imageSource="public/images/rosenhøj-09.webp" imageWidth={scrollerImageWidth}/>
-          <ImgScrollerItem imageSource="public/images/rosenhøj-10.webp" imageWidth={scrollerImageWidth}/>
-          <ImgScrollerItem imageSource="public/images/rosenhøj-11.webp" imageWidth={scrollerImageWidth}/>
-          <ImgScrollerItem imageSource="public/images/rosenhøj-12.webp" imageWidth={scrollerImageWidth}/>
+          <ImgScrollerItem imageSource="public/images/rosenhøj-05.webp" imageWidth={scrollerImageWidth} />
+          <ImgScrollerItem imageSource="public/images/rosenhøj-06.webp" imageWidth={scrollerImageWidth} />
+          <ImgScrollerItem imageSource="public/images/rosenhøj-07.webp" imageWidth={scrollerImageWidth} />
+          <ImgScrollerItem imageSource="public/images/rosenhøj-08.webp" imageWidth={scrollerImageWidth} />
+          <ImgScrollerItem imageSource="public/images/rosenhøj-09.webp" imageWidth={scrollerImageWidth} />
+          <ImgScrollerItem imageSource="public/images/rosenhøj-10.webp" imageWidth={scrollerImageWidth} />
+          <ImgScrollerItem imageSource="public/images/rosenhøj-11.webp" imageWidth={scrollerImageWidth} />
+          <ImgScrollerItem imageSource="public/images/rosenhøj-12.webp" imageWidth={scrollerImageWidth} />
         </ImgScroller>
         <p>
-          Nyrenoveret soveværelse med kingsize-seng, inklusiv en enkeltdagseng i hjørnet af soveværelset, perfekt til små familier på op til 4 personer.Dit eget private opholdsrum med brandeovn og badeværelse.Fjernsyn med premium-kanaler. Kaffe- og tefaciliteter. 
-
+          Nyrenoveret soveværelse med kingsize-seng, inklusiv en enkeltdagseng i hjørnet af soveværelset, perfekt til små familier på op til 4 personer.Dit eget private opholdsrum med brandeovn og
+          badeværelse.Fjernsyn med premium-kanaler. Kaffe- og tefaciliteter.
         </p>
       </section>
 
-      <Line lineWidth="90%" lineColor="var(--custom_black)"/>
+      <Line lineWidth="90%" lineColor="var(--custom_black)" />
       <section class="information_section">
         <ul class="Information">
           <li>Nyrenoveret.</li>
@@ -63,15 +62,14 @@ const scrollerImageWidth = "100vw";
 
         <img class="room_drawing" src="public/images/room-topview.webp" alt="Room" />
       </section>
-      <Line lineWidth="90%" lineColor="var(--custom_black)"/>
-      <Button text="BOOK VÆRELSE" link=""/>
-      <Line lineWidth="90%" lineColor="var(--custom_black)"/>
+      <Line lineWidth="90%" lineColor="var(--custom_black)" />
+      <Button text="BOOK VÆRELSE" link="" />
+      <Line lineWidth="90%" lineColor="var(--custom_black)" />
     </main>
     <Footer />
   </body>
 
   <style>
-
     h3 {
       color: var(--dark_blue);
       font-size: clamp(1.5rem, 8vw, 4rem);
@@ -92,7 +90,7 @@ const scrollerImageWidth = "100vw";
       gap: 2rem;
       place-items: center;
       padding-block: 1rem;
-      max-width:100vw;
+      max-width: 100vw;
     }
     img {
       width: 100%;

@@ -13,6 +13,11 @@
   font-family: raleway, sans-serif;
   font-weight: 400;
   font-style: normal;
+
+}
+body{
+  max-width: 100dvw;
+  background-color: #00ff0022;
 }
 h2 {
   color: var(--custom_black);
