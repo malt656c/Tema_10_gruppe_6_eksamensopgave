@@ -1,0 +1,89 @@
+---
+import Button from "./Button.astro";
+---
+
+<h3>Overvej at afholde et arrangement på Rosenhøj!</h3>
+<section>
+  <img src="../images/Events2.webp" alt="Events"/>
+  <p>
+    Med vintage-inspirerede omgivelser og mulighed for at kunne betjene op til 40 gæster, tilbyder vi den ideelle ramme til enhver begivenhed - om det er en konfirmation, fødselsdag eller
+    firmaarrangement. <br />
+    <br />
+
+    Vores ekspertkok vil sammensætte lækre menuer, der imødekommer dine specifikke præferencer og kostbehov. Uanset om du ønsker en formel middag eller en afslappet buffet, kan vi imødekomme dine
+    behov med høj kvalitet i madlavningen og enestående service.
+  </p>
+
+  <img src="../images/Events1.webp" alt="Events"/>
+
+  <p>
+    Vores dedikerede hold vil assistere dig i alle aspekter af planlægningen, herunder bordopdækning, dekoration, musik og underholdning, for at sikre, at dit arrangement bliver en stor succes. Vi er
+    stolte af at levere fantastisk service og opmærksomhed på detaljer, så du kan slappe af og nyde din særlige begivenhed. <br /><br />Tag kontakt til os i dag for at få mere at vide om vores
+    eventpakker og menuvalg. Det ville være en ære for os at være vært for din næste særlige begivenhed på Rosenhøj.
+  </p>
+</section>
+<Button text="KONTAKT OS" link="/index.html#KontaktOs" />
+
+<style>
+  section {
+    display: grid;
+    place-items: center;
+    gap: 2rem;
+    margin: auto;
+  }
+  h3 {
+    line-height: 2;
+    color: var(--dark_blue);
+    font-size: clamp(1rem, 5vw, 2rem);
+    display: grid;
+    gap: 0.7rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  p {
+    padding-inline: 2.5em;
+    padding-block: 2em;
+    font-family: "raleway", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    line-height: 150%;
+  }
+
+  img {
+    width: 100%;
+    max-height: 450px;
+    object-fit: cover;
+    object-position: bottom;
+  }
+  @media (min-width: 800px) {
+    section {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+    p {
+      max-width: 55ch;
+      padding-block: 2rem;
+      font-size: 1.5vw;
+    }
+
+    h2 {
+      grid-column: span 2;
+    }
+    img:first-of-type,
+    p:nth-of-type(2),
+    p:nth-of-type(3) {
+      grid-column: 2/3;
+    }
+    img:last-of-type,
+    p:first-of-type {
+      grid-column: 1/2;
+    }
+    img:first-of-type,
+    p:first-of-type {
+      grid-row: 2/3;
+    }
+    img:last-of-type {
+      grid-row: span 2;
+    }
+  }
+</style>
