@@ -9,10 +9,11 @@ import Button from "../components/Button.astro";
 <html lang="da">
   <head>
     <meta charset="utf-8" />
+    <meta name="description" content="Rosenhøj B&B is a boutique Bed and Breakfast in Svendborg. We have a luxurious suite and a glamping tent. Our chef creates magic food for you." />
     <link rel="icon" type="image/svg+xml" href="/rosenhoj_favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <link rel="stylesheet" href="https://use.typekit.net/xcg1awn.css" />
+    <link rel="stylesheet preconnect preload" as="font" href="https://use.typekit.net/xcg1awn.css" />
     <link rel="stylesheet" href="../../public/styles/global.css" />
     <title>Rosenhøj - Værelser</title>
   </head>
@@ -40,7 +41,7 @@ import Button from "../components/Button.astro";
           <p> op til 2 personer</p>
           <span>950.- DKK</span>
         </div>
-        <img src="public/images/rosenhøj-15.webp" alt="glamping" />
+        <img src="public/images/rosenhøj-15.webp" alt="glamping" loading="lazy"/>
         <Button link="sv_rooms.html" text="SE VÆRELSE" />
         <Line lineWidth="100%" lineColor="var(--custom_black)"/>
       </article>
@@ -51,7 +52,7 @@ import Button from "../components/Button.astro";
           <p>op til 4 personer</p>
           <span>1500.- DKK</span>
         </div>
-        <img src="public/images/bed.webp" alt="bed" />
+        <img src="public/images/bed.webp" alt="bed" loading="lazy"/>
         <Button link="sv_rooms.html" text="SE VÆRELSE" />
         <Line lineWidth="100%" lineColor="var(--custom_black)"/>
       </article>

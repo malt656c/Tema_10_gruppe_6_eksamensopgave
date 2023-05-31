@@ -9,10 +9,12 @@ import Button from "../components/Button.astro";
 <html lang="da">
   <head>
     <meta charset="utf-8" />
+    <meta name="description" content="Rosenhøj B&B is a boutique Bed and Breakfast in Svendborg. We have a luxurious suite and a glamping tent. Our chef creates magic food for you." />
+
     <link rel="icon" type="image/svg+xml" href="/rosenhoj_favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <link rel="stylesheet" href="https://use.typekit.net/xcg1awn.css" />
+    <link rel="stylesheet preload" as="font" href="https://use.typekit.net/xcg1awn.css" />
     <link rel="stylesheet" href="../../public/styles/global.css" />
     <title>Rosenhøj - Om Os</title>
   </head>
@@ -30,16 +32,16 @@ import Button from "../components/Button.astro";
         </p>
         <img src="/public/images/img_about_us/img1.webp" alt="rosenhoejs ejer" />
         <p>
-          Vi passer på dig som familie! Vi har kontakter overalt på Fyn og i Svendborg. Vi kan hjælpe dig med
-          hundredvis af forskellige aktiviteter. Kajaksejlads, fiskeri, sejlture, sightseeing, natur, picnic - der er så meget at se og gøre, og vi vil hjælpe dig med at organisere det. Det er din
-          dyrebare ferie, og vi vil hjælpe dig med at gøre den fantastisk.
+          Vi passer på dig som familie! Vi har kontakter overalt på Fyn og i Svendborg. Vi kan hjælpe dig med hundredvis af forskellige aktiviteter. Kajaksejlads, fiskeri, sejlture, sightseeing,
+          natur, picnic - der er så meget at se og gøre, og vi vil hjælpe dig med at organisere det. Det er din dyrebare ferie, og vi vil hjælpe dig med at gøre den fantastisk.
         </p>
       </section>
-      <Line lineWidth="90%" lineColor="var(--custom_black)"/>
+      <Line lineWidth="90%" lineColor="var(--custom_black)" />
       <section>
         <h2>VORES ETHOS</h2>
         <p>
-          Bo på Rosenhøj og mærk atmosfæren. Vi brænder for kvalitet, sundt, lokalt og bæredygtigt mad, tilberedt af vores kok. Vi går op i dyrevelfærd, og vores filosofi er at man burde spise mindre kød, og hvis man gør det, så sørg for, at det er det bedste lokale kvalitetskød med de højeste velfærdsstandarder.
+          Bo på Rosenhøj og mærk atmosfæren. Vi brænder for kvalitet, sundt, lokalt og bæredygtigt mad, tilberedt af vores kok. Vi går op i dyrevelfærd, og vores filosofi er at man burde spise mindre
+          kød, og hvis man gør det, så sørg for, at det er det bedste lokale kvalitetskød med de højeste velfærdsstandarder.
         </p>
         <div>
           <img src="/public/images/img_about_us/img2.webp" alt="kager" />
@@ -47,12 +49,12 @@ import Button from "../components/Button.astro";
           <img class="fisk" src="/public/images/img_about_us/img4.webp" alt="pizza" />
         </div>
       </section>
-      <Line lineWidth="90%" lineColor="var(--custom_black)"/>
+      <Line lineWidth="90%" lineColor="var(--custom_black)" />
       <section>
         <h2>STAY WITH A CHEF</h2>
         <p>
-          Trine er en kvalificeret kok med mange års erfaring fra restauranter i London. 
-          Rosenhøj handler om lokal, sæsonbestemt og sund mad. Vi gør vores bedste for at være bæredygtige, og vi genbruger selvfølgelig alt, hvad vi kan, og tager også hensyn til "mad-kilometer" ved oprettelse af menuer.
+          Trine er en kvalificeret kok med mange års erfaring fra restauranter i London. Rosenhøj handler om lokal, sæsonbestemt og sund mad. Vi gør vores bedste for at være bæredygtige, og vi
+          genbruger selvfølgelig alt, hvad vi kan, og tager også hensyn til "mad-kilometer" ved oprettelse af menuer.
         </p>
         <img src="/public/images/img_about_us/img5.webp" alt="cheffer af rosenhoej" />
       </section>
@@ -66,7 +68,7 @@ import Button from "../components/Button.astro";
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen></iframe>
+          allowfullscreen loading="lazy"></iframe>
       </center>
     </main>
     <Footer />

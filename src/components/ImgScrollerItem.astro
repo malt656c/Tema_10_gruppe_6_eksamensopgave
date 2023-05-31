@@ -3,7 +3,7 @@ const { imageSource, imageWidth } = Astro.props;
 ---
 
 <div>
-  <img src={imageSource} alt="" />
+  <img src={imageSource} alt="" loading="lazy"/>
 </div>
 
 <style define:vars={{ imageWidth }}>
